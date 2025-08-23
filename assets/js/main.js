@@ -10,8 +10,8 @@ document.addEventListener("DOMContentLoaded", () => {
       .catch((error) => console.error(`Error loading ${placeholderId}:`, error))
   }
 
-  loadComponent("components/navbar.html", "navbar-placeholder")
-  loadComponent("components/footer.html", "footer-placeholder")
+  loadComponent("/components/navbar.html", "navbar-placeholder")
+  loadComponent("/components/contactFooter.html", "footer-placeholder")
 
   function initializeNavbar() {
     // Mobile Menu Toggle
@@ -203,16 +203,16 @@ function redirectToProduct(productType) {
   // Redirect to respective product pages
   switch (productType) {
     case "capsules":
-      window.location.href = "products/capsules.html"
+      window.location.href = "pages/products/capsules.html"
       break
     case "tablets":
-      window.location.href = "products/tablets.html"
+      window.location.href = "pages/products/tablets.html"
       break
     case "sachets":
-      window.location.href = "products/sachets.html"
+      window.location.href = "pages/products/sachets.html"
       break
     case "syrups":
-      window.location.href = "products/syrups.html"
+      window.location.href = "pages/products/syrups.html"
       break
     default:
       console.log("Product page not found")
