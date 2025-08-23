@@ -10,8 +10,8 @@ document.addEventListener("DOMContentLoaded", function() {
       .catch(error => console.error(`Error loading ${placeholderId}:`, error));
   };
 
-  loadComponent('/components/navbar.html', 'navbar-placeholder');
-  loadComponent('/components/footer.html', 'footer-placeholder');
+  loadComponent('components/navbar.html', 'navbar-placeholder');
+  loadComponent('components/footer.html', 'footer-placeholder');
 
   
   // --- Mobile Menu Toggle ---
