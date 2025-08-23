@@ -1,0 +1,136 @@
+/* Product Page Header */
+.product-header {
+  padding: 3rem 0;
+  background-color: var(--light-gray);
+  text-align: center;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.product-header h1 {
+  font-size: 2.8rem;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+/* Table Section */
+.product-table-section {
+  padding: 3rem 0;
+}
+
+.table-controls {
+  margin-bottom: 1.5rem;
+}
+
+.search-and-size {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+#search-input {
+  flex: 1;
+  max-width: 400px;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+}
+
+.page-size-control {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.page-size-control label {
+  color: var(--dark-gray);
+}
+
+#page-size {
+  padding: 0.5rem;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.table-container {
+  overflow-x: auto; /* For responsiveness on small screens */
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+}
+
+thead {
+  background-color: var(--light-gray);
+}
+
+th {
+  font-weight: 600;
+  color: var(--dark-gray);
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+.col-sr-no { width: 10%; }
+.col-name { width: 90%; }
+
+/* Pagination */
+.pagination-wrapper {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.pagination-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.pagination-wrapper button {
+  background-color: white;
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  padding: 0.5rem 1rem;
+  margin: 0 0.25rem;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.pagination-wrapper button:hover:not(:disabled) {
+  background-color: #e6f2f2;
+}
+
+.pagination-wrapper button:disabled {
+  border-color: #ccc;
+  color: #999;
+  cursor: not-allowed;
+}
+
+.pagination-wrapper .page-info {
+  font-size: 0.9rem;
+  color: var(--dark-gray);
+}
+
+.pagination-wrapper .nav-btn {
+  min-width: 100px;
+}

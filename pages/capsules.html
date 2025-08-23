@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Capsules - TRUGEN PHARMACEUTICALS</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/pages/products.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body id="page-capsules">
+
+  <header id="navbar-placeholder"></header>
+
+  <main>
+    <section class="product-header">
+      <div class="container">
+        <h1 id="page-title"></h1>
+        <p>Browse our extensive range of high-quality pharmaceutical products.</p>
+      </div>
+    </section>
+
+    <section class="product-table-section">
+      <div class="container">
+        <div class="table-controls">
+          <div class="search-and-size">
+            <input type="text" id="search-input" placeholder="🔍 Search by product name...">
+            <div class="page-size-control">
+              <label for="page-size">Items per page:</label>
+              <select id="page-size">
+                <option value="10">10</option>
+                <option value="50">50</option>
+                <option value="100">100</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th class="col-sr-no">Sr. No.</th>
+                <th class="col-name">Generic Name</th>
+              </tr>
+            </thead>
+            <tbody id="product-table-body">
+              <tr>
+                <td>1</td>
+                <td>Loading products...</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div id="pagination-wrapper" class="pagination-wrapper">
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <footer id="footer-placeholder"></footer>
+
+  <script src="../assets/js/products-data.js"></script>
+  <script src="../assets/js/products.js"></script>
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>
