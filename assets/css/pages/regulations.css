@@ -1,0 +1,73 @@
+.page-header {
+    padding: 3rem 0;
+    background-color: var(--light-gray);
+    text-align: center;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.page-header h1 {
+    font-size: 2.8rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+/* Using the .page-header style from accreditations.css for consistency */
+
+.regulatory-content-section {
+    padding: 4rem 0;
+}
+
+/* Two-column grid for the introduction */
+.intro-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Default to a single column */
+    gap: 2.5rem;
+    align-items: center;
+    margin-bottom: 3rem;
+}
+
+/* On medium screens and up, switch to two columns */
+@media (min-width: 768px) {
+    .intro-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.intro-text h2 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    line-height: 1.3;
+}
+
+.intro-text p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--medium-gray);
+}
+
+.intro-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+/* Styling for the detailed text section below */
+.details-section {
+    border-top: 1px solid var(--border-color);
+    padding-top: 3rem;
+}
+
+.details-section h2 {
+    text-align: center;
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+}
+
+.details-section p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--medium-gray);
+    margin-bottom: 1.5rem; /* Space between paragraphs */
+}

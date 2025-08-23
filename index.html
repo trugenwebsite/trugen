@@ -1,102 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TRUGEN PHARMACEUTICALS PVT. LTD - Home</title>
-  <link rel="stylesheet" href="assets/css/style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TRUGEN PHARMACEUTICALS PVT. LTD - Home</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header id="navbar-placeholder"></header>
 
-  <header id="navbar-placeholder"></header>
-
-  <main>
-    <!-- Hero section remains at top -->
-    <section class="hero-section">
-      <div class="hero-content">
-        <h1 class="hero-title">TRUGEN</h1>
-        <p class="hero-tagline">Pharmaceuticals pvt. ltd.</p>
-        <button class="download-btn" onclick="downloadBrochure()">Download Brochure</button>
-      </div>
-    </section>
-
-    <!-- Moved About Us section below hero section -->
-    <section class="about-banner">
-      <div class="container">
-        <h2>About Us</h2>
-        <p>We are a leading India-focused CDMO, recognized for our revenue, production capacity, and expansive client services.</p>
-      </div>
-    </section>
-
-    <!-- Moved products section below About Us -->
-    <section class="products-section">
-      <div class="container">
-        <h2 class="section-title">Our Products</h2>
-        <div class="products-grid">
-          <div class="product-card" onclick="redirectToProduct('capsules')">
-            <img src="/placeholder.svg?height=200&width=300" alt="Capsules" class="product-image">
-            <h3>Tablets</h3>
-          </div>
-          <div class="product-card" onclick="redirectToProduct('tablets')">
-            <img src="/placeholder.svg?height=200&width=300" alt="Tablets" class="product-image">
-            <h3>Capsules</h3>
-          </div>
-          <div class="product-card" onclick="redirectToProduct('sachets')">
-            <img src="/placeholder.svg?height=200&width=300" alt="Sachets" class="product-image">
-            <h3>Syrups</h3>
-          </div>
-          <div class="product-card" onclick="redirectToProduct('syrups')">
-            <img src="/placeholder.svg?height=200&width=300" alt="Syrups" class="product-image">
-            <h3>Sachets</h3>
-          </div>
+    <main>
+      <!-- Hero section remains at top -->
+      <section class="hero-section">
+        <div class="hero-content">
+          <h1 class="hero-title">TRUGEN</h1>
+          <p class="hero-tagline">Pharmaceuticals pvt. ltd.</p>
+          <button class="download-btn" onclick="downloadBrochure()">
+            Download Brochure
+          </button>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Moved brochure section above carousel -->
-    <section class="brochure-section">
-      <div class="container">
-        <div class="brochure-content">
-          <div class="brochure-text">
-            <p>Explore Trugen pharmaceuticals expertise with our detailed brochure. Discover our manufacturing capabilities, innovative R&D, diverse dosage forms, and commitment to quality. Download now to learn how we drive pharmaceutical excellence and empower healthcare brands globally.</p>
-          </div>
-          <div class="brochure-button">
-            <button class="download-btn" onclick="downloadBrochure()">Download Brochure</button>
-          </div>
+      <!-- Moved About Us section below hero section -->
+      <section class="about-banner">
+        <div class="container">
+          <h2>About Us</h2>
+          <p>
+            We are a leading India-focused CDMO, recognized for our revenue,
+            production capacity, and expansive client services.
+          </p>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Moved carousel section below brochure -->
-    <section class="carousel-section">
-      <div class="container">
-        <div class="carousel-container">
-          <button class="carousel-btn prev-btn" onclick="changeSlide(-1)">&#8249;</button>
-          <div class="carousel-wrapper">
-            <div class="carousel-track" id="carouselTrack">
-              <img src="/placeholder.svg?height=300&width=400" alt="Manufacturing 1" class="carousel-image">
-              <img src="/placeholder.svg?height=300&width=400" alt="Laboratory 1" class="carousel-image">
-              <img src="/placeholder.svg?height=300&width=400" alt="Quality Control" class="carousel-image">
-              <img src="/placeholder.svg?height=300&width=400" alt="R&D Facility" class="carousel-image">
-              <img src="/placeholder.svg?height=300&width=400" alt="Packaging" class="carousel-image">
-              <img src="/placeholder.svg?height=300&width=400" alt="Clean Room" class="carousel-image">
-              <img src="/placeholder.svg?height=300&width=400" alt="Storage" class="carousel-image">
-              <img src="/placeholder.svg?height=300&width=400" alt="Testing Lab" class="carousel-image">
+      <!-- Moved products section below About Us -->
+      <section class="products-section">
+        <div class="container">
+          <h2 class="section-title">Our Products</h2>
+          <div class="products-grid">
+            <div class="product-card" onclick="redirectToProduct('tablets')">
+              <img
+                src="/placeholder.svg?height=200&width=300"
+                alt="tablets"
+                class="product-image"
+              />
+              <h3>Tablets</h3>
+            </div>
+            <div class="product-card" onclick="redirectToProduct('capsules')">
+              <img
+                src="/placeholder.svg?height=200&width=300"
+                alt="capsules"
+                class="product-image"
+              />
+              <h3>Capsules</h3>
+            </div>
+            <div class="product-card" onclick="redirectToProduct('syrups')">
+              <img
+                src="/placeholder.svg?height=200&width=300"
+                alt="Syrups"
+                class="product-image"
+              />
+              <h3>Syrups</h3>
+            </div>
+            <div class="product-card" onclick="redirectToProduct('sachets')">
+              <img
+                src="/placeholder.svg?height=200&width=300"
+                alt="Sachets"
+                class="product-image"
+              />
+              <h3>Sachets</h3>
             </div>
           </div>
-          <button class="carousel-btn next-btn" onclick="changeSlide(1)">&#8250;</button>
         </div>
-      </div>
-    </section>
+      </section>
 
-    
-  </main>
-  
-  <footer id="footer-placeholder"></footer>
-  
-  <script src="assets/js/main.js"></script>
-</body>
+      <!-- Moved brochure section above carousel -->
+      <section class="brochure-section">
+        <div class="container">
+          <div class="brochure-content">
+            <div class="brochure-text">
+              <p>
+                Explore Trugen pharmaceuticals expertise with our detailed
+                brochure. Discover our manufacturing capabilities, innovative
+                R&D, diverse dosage forms, and commitment to quality. Download
+                now to learn how we drive pharmaceutical excellence and empower
+                healthcare brands globally.
+              </p>
+            </div>
+            <div class="brochure-button">
+              <button class="download-btn" onclick="downloadBrochure()">
+                Download Brochure
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Moved carousel section below brochure -->
+      <section class="carousel-section">
+        <div class="container">
+          <div class="carousel-container">
+            <button class="carousel-btn prev-btn" onclick="changeSlide(-1)">
+              &#8249;
+            </button>
+            <div class="carousel-wrapper">
+              <div class="carousel-track" id="carouselTrack">
+                <img
+                  src="/placeholder.svg?height=300&width=400"
+                  alt="Manufacturing 1"
+                  class="carousel-image"
+                />
+                <img
+                  src="/placeholder.svg?height=300&width=400"
+                  alt="Laboratory 1"
+                  class="carousel-image"
+                />
+                <img
+                  src="/placeholder.svg?height=300&width=400"
+                  alt="Quality Control"
+                  class="carousel-image"
+                />
+                <img
+                  src="/placeholder.svg?height=300&width=400"
+                  alt="R&D Facility"
+                  class="carousel-image"
+                />
+                <img
+                  src="/placeholder.svg?height=300&width=400"
+                  alt="Packaging"
+                  class="carousel-image"
+                />
+                <img
+                  src="/placeholder.svg?height=300&width=400"
+                  alt="Clean Room"
+                  class="carousel-image"
+                />
+                <img
+                  src="/placeholder.svg?height=300&width=400"
+                  alt="Storage"
+                  class="carousel-image"
+                />
+                <img
+                  src="/placeholder.svg?height=300&width=400"
+                  alt="Testing Lab"
+                  class="carousel-image"
+                />
+              </div>
+            </div>
+            <button class="carousel-btn next-btn" onclick="changeSlide(1)">
+              &#8250;
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer-placeholder"></footer>
+
+    <script src="assets/js/main.js"></script>
+  </body>
 </html>
