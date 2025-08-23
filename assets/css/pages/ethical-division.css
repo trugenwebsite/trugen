@@ -1,0 +1,285 @@
+/* Ethical Division Page Styles */
+
+.ethical-hero {
+  background: linear-gradient(135deg, #14b8a6 0%, #0d9488 100%);
+  color: white;
+  padding: 120px 0 80px;
+  text-align: center;
+}
+
+.ethical-hero h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.ethical-hero p {
+  font-size: 1.25rem;
+  opacity: 0.9;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Marketing Divisions Section */
+.marketing-divisions {
+  padding: 80px 0;
+  background: #f8fafc;
+}
+
+.marketing-divisions h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #14b8a6;
+  margin-bottom: 1rem;
+}
+
+.section-intro {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #64748b;
+  max-width: 800px;
+  margin: 0 auto 3rem;
+  line-height: 1.6;
+}
+
+.divisions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.division-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  border: 1px solid #e2e8f0;
+}
+
+.division-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(20, 184, 166, 0.15);
+  border-color: #14b8a6;
+}
+
+.division-icon {
+  margin-bottom: 1.5rem;
+}
+
+.division-icon img {
+  width: 60px;
+  height: 60px;
+  filter: hue-rotate(180deg) saturate(1.5);
+}
+
+.division-card h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #14b8a6;
+  margin-bottom: 0.75rem;
+}
+
+.division-card p {
+  color: #64748b;
+  line-height: 1.5;
+}
+
+/* Ethical Presence Section */
+.ethical-presence {
+  padding: 80px 0;
+  background: white;
+}
+
+.presence-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.presence-text h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #14b8a6;
+  margin-bottom: 1.5rem;
+}
+
+.presence-text p {
+  font-size: 1.1rem;
+  color: #475569;
+  line-height: 1.7;
+}
+
+.presence-stats {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+.stat-item {
+  text-align: center;
+  padding: 1.5rem;
+  background: #f0fdfa;
+  border-radius: 12px;
+  border: 2px solid #14b8a6;
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #14b8a6;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  font-size: 1rem;
+  color: #64748b;
+  font-weight: 500;
+}
+
+/* Domestic Operations Section */
+.domestic-operations {
+  padding: 80px 0;
+  background: #f8fafc;
+}
+
+.domestic-operations h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #14b8a6;
+  margin-bottom: 3rem;
+}
+
+.operations-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.operations-text p {
+  font-size: 1.1rem;
+  color: #475569;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.operations-text strong {
+  color: #14b8a6;
+  font-weight: 600;
+}
+
+.operations-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Operative States Section */
+.operative-states {
+  padding: 80px 0;
+  background: white;
+}
+
+.operative-states h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #14b8a6;
+  margin-bottom: 1rem;
+}
+
+.states-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 3rem;
+}
+
+.state-item {
+  background: #f0fdfa;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 500;
+  color: #14b8a6;
+  border: 1px solid #a7f3d0;
+  transition: all 0.3s ease;
+}
+
+.state-item:hover {
+  background: #14b8a6;
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .ethical-hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .ethical-hero p {
+    font-size: 1.1rem;
+  }
+
+  .presence-content,
+  .operations-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .presence-stats {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+
+  .stat-item {
+    padding: 1rem;
+  }
+
+  .stat-number {
+    font-size: 1.8rem;
+  }
+
+  .divisions-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .states-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .ethical-hero {
+    padding: 100px 0 60px;
+  }
+
+  .ethical-hero h1 {
+    font-size: 2rem;
+  }
+
+  .marketing-divisions h2,
+  .presence-text h2,
+  .domestic-operations h2,
+  .operative-states h2 {
+    font-size: 2rem;
+  }
+
+  .presence-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .states-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,313 @@
+/* Contract Manufacturing Page Styles */
+
+.hero-section {
+  background: linear-gradient(135deg, #14b8a6 0%, #0d9488 100%);
+  color: white;
+  padding: 120px 0 80px;
+  text-align: center;
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero-content p {
+  font-size: 1.25rem;
+  max-width: 600px;
+  margin: 0 auto;
+  opacity: 0.95;
+}
+
+.overview-section {
+  padding: 80px 0;
+  background: #f8fafc;
+}
+
+.overview-section h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #14b8a6;
+  margin-bottom: 3rem;
+}
+
+.overview-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.overview-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.overview-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(20, 184, 166, 0.15);
+}
+
+.overview-card h3 {
+  color: #14b8a6;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.overview-card p {
+  color: #64748b;
+  line-height: 1.6;
+}
+
+.specializations-section {
+  padding: 80px 0;
+  background: white;
+}
+
+.specializations-section h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #14b8a6;
+  margin-bottom: 3rem;
+}
+
+.specializations-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.specialization-item {
+  background: linear-gradient(135deg, #14b8a6, #0d9488);
+  color: white;
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.specialization-item:hover {
+  transform: translateY(-5px);
+}
+
+.specialization-item h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.services-section {
+  padding: 80px 0;
+  background: #f8fafc;
+}
+
+.services-section h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #14b8a6;
+  margin-bottom: 3rem;
+}
+
+.services-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.services-text p {
+  font-size: 1.125rem;
+  color: #64748b;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.services-text ul {
+  list-style: none;
+  padding: 0;
+}
+
+.services-text li {
+  background: white;
+  padding: 1rem 1.5rem;
+  margin-bottom: 0.5rem;
+  border-radius: 8px;
+  border-left: 4px solid #14b8a6;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  color: #64748b;
+}
+
+.economic-value-section {
+  padding: 80px 0;
+  background: white;
+}
+
+.economic-value-section h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #14b8a6;
+  margin-bottom: 3rem;
+}
+
+.value-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.value-card {
+  background: #f8fafc;
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.value-card:hover {
+  border-color: #14b8a6;
+  transform: translateY(-5px);
+}
+
+.value-card h3 {
+  color: #14b8a6;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.value-card p {
+  color: #64748b;
+  line-height: 1.6;
+}
+
+.capacity-section {
+  padding: 80px 0;
+  background: #f8fafc;
+}
+
+.capacity-section h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #14b8a6;
+  margin-bottom: 3rem;
+}
+
+.capacity-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.capacity-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.capacity-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(20, 184, 166, 0.15);
+}
+
+.capacity-card h3 {
+  color: #14b8a6;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.capacity-number {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #0d9488;
+  margin-bottom: 0.5rem;
+}
+
+.capacity-card p {
+  color: #64748b;
+  font-size: 1rem;
+}
+
+.partnership-section {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #14b8a6 0%, #0d9488 100%);
+  color: white;
+  text-align: center;
+}
+
+.partnership-content h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.partnership-content p {
+  font-size: 1.25rem;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  opacity: 0.95;
+}
+
+.cta-button {
+  background: white;
+  color: #14b8a6;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.125rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+  background: #f8fafc;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-content p {
+    font-size: 1.125rem;
+  }
+
+  .overview-section h2,
+  .specializations-section h2,
+  .services-section h2,
+  .economic-value-section h2,
+  .capacity-section h2 {
+    font-size: 2rem;
+  }
+
+  .overview-grid,
+  .specializations-grid,
+  .value-grid,
+  .capacity-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .capacity-number {
+    font-size: 2rem;
+  }
+
+  .partnership-content h2 {
+    font-size: 2rem;
+  }
+}
