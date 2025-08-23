@@ -1,17 +1,52 @@
 <nav class="main-nav">
   <div class="container">
     <a href="/" class="nav-logo">
-      <img src="assets/images/logo.png" alt="TRUGEN Pharmaceuticals Logo">
+      <img src="public/trugen-pharmaceuticals-logo.png" alt="TRUGEN Pharmaceuticals Logo">
     </a>
+    
     <div class="nav-links" id="nav-links">
-      <a href="#">Pharmaceutical</a>
-      <a href="#">API</a>
-      <a href="#">Nutraceutical & Ayurvedic</a>
-      <a href="#">Cosmetics & Dermatology</a>
-      <a href="#">Contact Us</a>
+      <a href="/" class="nav-item">Home</a>
+      
+      <!-- Product Dropdown -->
+      <div class="nav-item dropdown">
+        <a href="#" class="dropdown-toggle">Product</a>
+        <div class="dropdown-menu">
+          <a href="/products/capsules.html">Capsules</a>
+          <a href="/products/tablets.html">Tablets</a>
+          <a href="/products/sachets.html">Sachets</a>
+          <a href="/products/syrups.html">Syrups</a>
+        </div>
+      </div>
+      
+      <!-- Division Dropdown -->
+      <div class="nav-item dropdown">
+        <a href="#" class="dropdown-toggle">Division</a>
+        <div class="dropdown-menu">
+          <a href="/division/ethical-division.html">Ethical Division</a>
+          <a href="/division/international-business.html">International Business</a>
+          <a href="/division/institutional.html">Institutional</a>
+          <a href="/division/contract-manufacturing.html">Contract Manufacturing</a>
+        </div>
+      </div>
+      
+      <!-- Manufacturing Facilities Dropdown -->
+      <div class="nav-item dropdown">
+        <a href="#" class="dropdown-toggle">Manufacturing Facilities</a>
+        <div class="dropdown-menu">
+          <a href="/facilities/operational-unit.html">Operational Unit</a>
+          <a href="/facilities/our-accreditations.html">Our Accreditations</a>
+          <a href="/facilities/regulatory-affairs.html">Regulatory Affairs</a>
+          <a href="/facilities/qa-qc.html">QA-QC</a>
+        </div>
+      </div>
+      
+      <a href="/contact.html" class="nav-item">Contact Us</a>
     </div>
+    
     <button class="mobile-menu-toggle" id="mobile-menu-button">
-      ☰
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
     </button>
   </div>
 </nav>
