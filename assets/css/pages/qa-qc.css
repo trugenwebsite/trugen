@@ -1,3 +1,68 @@
+/* Breadcrumb Navigation */
+.breadcrumb {
+    padding: 1rem 0;
+    background-color: var(--light-gray);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.breadcrumb .container {
+    padding-left: 2rem;
+}
+
+.breadcrumb nav {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.breadcrumb a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+.breadcrumb span {
+    color: var(--text-color);
+    opacity: 0.7;
+    font-size: 0.9rem;
+}
+
+.breadcrumb .separator {
+    color: var(--text-color);
+    opacity: 0.5;
+    margin: 0 0.25rem;
+}
+
+/* Page Header */
+.page-header {
+    padding: 30px 0;
+    background-color: var(--light-gray);
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.page-header .container {
+    padding-left: 2rem;
+}
+
+.page-header h1 {
+    font-size: 2.8rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.page-header p {
+    font-size: 1.2rem;
+    color: var(--text-color);
+    max-width: 800px;
+    margin: 0;
+    opacity: 0.9;
+}
+
 /* QA-QC Page Specific Styles */
 .qa-qc-content-section {
     padding: 4rem 0;
