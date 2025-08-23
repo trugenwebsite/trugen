@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function() {
   };
 
   loadComponent('components/navbar.html', 'navbar-placeholder');
-  loadComponent('components/footer.html', 'footer-placeholder');
+  loadComponent('components/contactFooter.html', 'footer-placeholder');
 
   
   // --- Mobile Menu Toggle ---

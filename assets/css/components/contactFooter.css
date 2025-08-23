@@ -1,0 +1,128 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* Footer styles */
+.contact-footer {
+    background-color: #000000;
+    color: #ffffff;
+    padding: 48px 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 32px;
+}
+
+/* Company info section */
+.company-info {
+    margin-bottom: 16px;
+}
+
+.logo-container {
+    margin-bottom: 24px;
+}
+
+.company-logo {
+    width: 200px;
+    height: auto;
+    margin-bottom: 16px;
+}
+
+.company-description {
+    color: #cccccc;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* Address sections */
+.address-section {
+    margin-bottom: 16px;
+}
+
+.section-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    color: #ffffff;
+}
+
+.address-content {
+    color: #cccccc;
+    font-size: 14px;
+}
+
+.address-content p {
+    margin-bottom: 8px;
+}
+
+.contact-links {
+    margin-top: 16px;
+}
+
+.contact-links p {
+    margin-bottom: 4px;
+}
+
+.contact-link {
+    color: #cccccc;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-link:hover {
+    color: #ffffff;
+}
+
+/* Copyright section */
+.copyright-section {
+    border-top: 1px solid #333333;
+    margin-top: 48px;
+    padding-top: 32px;
+}
+
+.copyright-text {
+    text-align: center;
+    color: #999999;
+    font-size: 14px;
+}
+
+/* Responsive design */
+@media (min-width: 768px) {
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 32px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .footer-grid {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 32px;
+    }
+    
+    .company-info {
+        grid-column: span 1;
+    }
+}
+
+/* Hover effects */
+.contact-link:focus {
+    outline: 2px solid #ffffff;
+    outline-offset: 2px;
+}
