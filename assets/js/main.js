@@ -5,28 +5,37 @@ document.addEventListener("DOMContentLoaded", () => {
       .then((response) => (response.ok ? response.text() : Promise.reject("Component not found.")))
       .then((data) => {
         document.getElementById(placeholderId).innerHTML = data
-        initializeNavbar()
+        setTimeout(initializeNavbar, 100)
       })
       .catch((error) => console.error(`Error loading ${placeholderId}:`, error))
   }
 
   loadComponent("components/navbar.html", "navbar-placeholder")
-  loadComponent("components/contactFooter.html", "footer-placeholder")
+  loadComponent("components/footer.html", "footer-placeholder")
 
   function initializeNavbar() {
     // Mobile Menu Toggle
     const mobileMenuButton = document.getElementById("mobile-menu-button")
     const navLinks = document.getElementById("nav-links")
 
+    console.log("[v0] Mobile menu button:", mobileMenuButton)
+    console.log("[v0] Nav links:", navLinks)
+
     if (mobileMenuButton && navLinks) {
-      mobileMenuButton.addEventListener("click", () => {
+      mobileMenuButton.addEventListener("click", (e) => {
+        e.preventDefault()
+        console.log("[v0] Mobile menu button clicked")
         navLinks.classList.toggle("active")
         mobileMenuButton.classList.toggle("active")
+        console.log("[v0] Nav links active:", navLinks.classList.contains("active"))
       })
+    } else {
+      console.error("[v0] Mobile menu elements not found")
     }
 
     // Mobile Dropdown Toggle
     const dropdowns = document.querySelectorAll(".dropdown")
+    console.log("[v0] Found dropdowns:", dropdowns.length)
 
     dropdowns.forEach((dropdown) => {
       const dropdownToggle = dropdown.querySelector(".dropdown-toggle")
@@ -36,6 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
           // Only prevent default and toggle on mobile
           if (window.innerWidth <= 992) {
             e.preventDefault()
+            console.log("[v0] Mobile dropdown clicked")
             dropdown.classList.toggle("active")
 
             // Close other dropdowns
