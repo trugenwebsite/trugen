@@ -184,6 +184,40 @@
   background-color: white;
 }
 
+.carousel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.carousel-dropdown select {
+  padding: 0.75rem 1rem;
+  border: 2px solid #14b8a6;
+  border-radius: 5px;
+  background-color: white;
+  color: #333;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 180px;
+}
+
+.carousel-dropdown select:hover {
+  border-color: #0f9488;
+  box-shadow: 0 2px 8px rgba(20, 184, 166, 0.2);
+}
+
+.carousel-dropdown select:focus {
+  outline: none;
+  border-color: #0f9488;
+  box-shadow: 0 0 0 3px rgba(20, 184, 166, 0.1);
+}
+
 .carousel-container {
   position: relative;
   max-width: 1200px;
@@ -302,6 +336,16 @@
 
   .next-btn {
     right: -20px;
+  }
+
+  .carousel-header {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .carousel-dropdown select {
+    min-width: 200px;
   }
 }
 
