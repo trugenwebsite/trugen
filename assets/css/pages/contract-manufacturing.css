@@ -1,25 +1,3 @@
-/* Contract Manufacturing Page Styles */
-
-.hero-section {
-  background: linear-gradient(135deg, #14b8a6 0%, #0d9488 100%);
-  color: white;
-  padding: 120px 0 80px;
-  text-align: center;
-}
-
-.hero-content h1 {
-  font-size: 3.5rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-}
-
-.hero-content p {
-  font-size: 1.25rem;
-  max-width: 600px;
-  margin: 0 auto;
-  opacity: 0.95;
-}
 
 .overview-section {
   padding: 80px 0;
