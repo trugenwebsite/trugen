@@ -5,7 +5,7 @@
 
 /* Hero Section */
 .hero-section {
-  background: linear-gradient(135deg, #14b8a6 0%, #0d9488 100%);
+  background: linear-gradient(135deg, #008080 0%, #0d9488 100%);
   color: white;
   padding: 120px 0 80px;
   text-align: center;
@@ -35,7 +35,7 @@
 .who-we-are-section h2 {
   font-size: 2.5rem;
   font-weight: 700;
-  color: #14b8a6;
+  color: #008080;
   text-align: center;
   margin-bottom: 3rem;
 }
@@ -70,7 +70,7 @@
 .director-message-section h2 {
   font-size: 2.5rem;
   font-weight: 700;
-  color: #14b8a6;
+  color: #008080;
   text-align: center;
   margin-bottom: 3rem;
 }
@@ -92,7 +92,7 @@
 .rd-section h2 {
   font-size: 2.5rem;
   font-weight: 700;
-  color: #14b8a6;
+  color: #008080;
   text-align: center;
   margin-bottom: 1rem;
 }
@@ -117,7 +117,7 @@
   padding: 2rem;
   border-radius: 12px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-  border-left: 4px solid #14b8a6;
+  border-left: 4px solid #008080;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -129,7 +129,7 @@
 .rd-card h3 {
   font-size: 1.25rem;
   font-weight: 600;
-  color: #14b8a6;
+  color: #008080;
   margin-bottom: 1rem;
 }
 
@@ -155,7 +155,7 @@
 .mission-vision-section h2 {
   font-size: 2.5rem;
   font-weight: 700;
-  color: #14b8a6;
+  color: #008080;
   text-align: center;
   margin-bottom: 3rem;
 }
@@ -173,14 +173,14 @@
   padding: 2.5rem;
   border-radius: 12px;
   text-align: center;
-  border-top: 4px solid #14b8a6;
+  border-top: 4px solid #008080;
 }
 
 .mission-card h3,
 .vision-card h3 {
   font-size: 1.5rem;
   font-weight: 600;
-  color: #14b8a6;
+  color: #008080;
   margin-bottom: 1.5rem;
 }
 
@@ -200,7 +200,7 @@
 }
 
 .values-content blockquote {
-  background: #14b8a6;
+  background: #008080;
   color: white;
   padding: 2rem;
   border-radius: 12px;
@@ -229,7 +229,7 @@
 .driving-growth-section h2 {
   font-size: 2.5rem;
   font-weight: 700;
-  color: #14b8a6;
+  color: #008080;
   text-align: center;
   margin-bottom: 3rem;
 }
@@ -258,7 +258,7 @@
 .growth-item h3 {
   font-size: 1.25rem;
   font-weight: 600;
-  color: #14b8a6;
+  color: #008080;
   margin-bottom: 1rem;
 }
 

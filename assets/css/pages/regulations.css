@@ -64,6 +64,7 @@
 /* Using the .page-header style from accreditations.css for consistency */
 
 .regulatory-content-section {
+    background: #f8fafc;
     padding: 4rem 0;
 }
 

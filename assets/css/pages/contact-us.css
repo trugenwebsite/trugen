@@ -5,7 +5,7 @@
 
 /* Hero Section */
 .contact-hero {
-  background: linear-gradient(135deg, #14b8a6 0%, #0d9488 100%);
+  background: linear-gradient(135deg, #008080 0%, #0d9488 100%);
   color: white;
   padding: 120px 0 80px;
   text-align: center;
@@ -52,7 +52,7 @@
 }
 
 .contact-card h3 {
-  color: #14b8a6;
+  color: #008080;
   font-size: 1.5rem;
   font-weight: 600;
   margin-bottom: 1.5rem;
@@ -76,7 +76,7 @@
 
 .contact-person:hover,
 .email-item:hover {
-  border-color: #14b8a6;
+  border-color: #008080;
 }
 
 .contact-person h4,
@@ -94,7 +94,7 @@
 }
 
 .contact-link {
-  color: #14b8a6;
+  color: #008080;
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s ease;
@@ -172,7 +172,7 @@
 .form-group select:focus,
 .form-group textarea:focus {
   outline: none;
-  border-color: #14b8a6;
+  border-color: #008080;
   box-shadow: 0 0 0 3px rgba(20, 184, 166, 0.1);
 }
 
@@ -182,7 +182,7 @@
 }
 
 .submit-btn {
-  background: #14b8a6;
+  background: #008080;
   color: white;
   padding: 1rem 2rem;
   border: none;
