@@ -31,7 +31,7 @@
 
 .division-card {
   background: white;
-  padding: 2rem;
+  padding: 1rem;
   border-radius: 12px;
   text-align: center;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
@@ -49,11 +49,7 @@
   margin-bottom: 1.5rem;
 }
 
-.division-icon img {
-  width: 60px;
-  height: 60px;
-  filter: hue-rotate(180deg) saturate(1.5);
-}
+
 
 .division-card h3 {
   font-size: 1.25rem;
