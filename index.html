@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TRUGEN PHARMACEUTICALS PVT. LTD - Home</title>
     <link rel="stylesheet" href="assets/css/style.css" />
+    <!-- Added Font Awesome CDN for icons to display properly -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -104,51 +106,77 @@
       <!-- Moved carousel section below brochure -->
       <section class="carousel-section">
         <div class="container">
+          <div class="carousel-header">
+            <h2 class="section-title">Our Facilities</h2>
+            <div class="carousel-dropdown">
+              <select id="facilityFilter" onchange="filterCarouselImages()">
+                <option value="all">All Facilities</option>
+                <option value="manufacturing">Manufacturing</option>
+                <option value="laboratory">Laboratory</option>
+                <option value="quality">Quality Control</option>
+                <option value="research">R&D Facility</option>
+                <option value="packaging">Packaging</option>
+                <option value="cleanroom">Clean Room</option>
+                <option value="storage">Storage</option>
+                <option value="testing">Testing Lab</option>
+              </select>
+            </div>
+          </div>
+          
           <div class="carousel-container">
             <button class="carousel-btn prev-btn" onclick="changeSlide(-1)">
               &#8249;
             </button>
             <div class="carousel-wrapper">
               <div class="carousel-track" id="carouselTrack">
+                <!-- Added data attributes for filtering -->
                 <img
                   src="/placeholder.svg?height=300&width=400"
                   alt="Manufacturing 1"
                   class="carousel-image"
+                  data-category="manufacturing"
                 />
                 <img
                   src="/placeholder.svg?height=300&width=400"
                   alt="Laboratory 1"
                   class="carousel-image"
+                  data-category="laboratory"
                 />
                 <img
                   src="/placeholder.svg?height=300&width=400"
                   alt="Quality Control"
                   class="carousel-image"
+                  data-category="quality"
                 />
                 <img
                   src="/placeholder.svg?height=300&width=400"
                   alt="R&D Facility"
                   class="carousel-image"
+                  data-category="research"
                 />
                 <img
                   src="/placeholder.svg?height=300&width=400"
                   alt="Packaging"
                   class="carousel-image"
+                  data-category="packaging"
                 />
                 <img
                   src="/placeholder.svg?height=300&width=400"
                   alt="Clean Room"
                   class="carousel-image"
+                  data-category="cleanroom"
                 />
                 <img
                   src="/placeholder.svg?height=300&width=400"
                   alt="Storage"
                   class="carousel-image"
+                  data-category="storage"
                 />
                 <img
                   src="/placeholder.svg?height=300&width=400"
                   alt="Testing Lab"
                   class="carousel-image"
+                  data-category="testing"
                 />
               </div>
             </div>

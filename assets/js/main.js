@@ -92,13 +92,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
 let currentSlide = 0
 let carouselInterval
+let allImages = [] // Store all images for filtering
+let filteredImages = [] // Store currently filtered images
 
 function initializeCarousel() {
   const track = document.getElementById("carouselTrack")
   if (!track) return
 
-  const images = track.querySelectorAll(".carousel-image")
-  const totalImages = images.length
+  allImages = Array.from(track.querySelectorAll(".carousel-image"))
+  filteredImages = [...allImages]
+
+  const totalImages = filteredImages.length
   const imagesPerView = getImagesPerView()
 
   // Start auto-increment
@@ -111,10 +115,34 @@ function initializeCarousel() {
   })
 }
 
-function getImagesPerView() {
-  if (window.innerWidth <= 480) return 1
-  if (window.innerWidth <= 768) return 2
-  return 4
+function filterCarouselImages() {
+  const filterValue = document.getElementById("facilityFilter").value
+  const track = document.getElementById("carouselTrack")
+
+  if (!track) return
+
+  // Stop auto-play during filtering
+  stopCarouselAutoPlay()
+
+  // Show/hide images based on filter
+  allImages.forEach((img) => {
+    if (filterValue === "all" || img.dataset.category === filterValue) {
+      img.style.display = "block"
+    } else {
+      img.style.display = "none"
+    }
+  })
+
+  // Update filtered images array
+  filteredImages = allImages.filter((img) => filterValue === "all" || img.dataset.category === filterValue)
+
+  // Reset current slide and update position
+  currentSlide = 0
+  const imagesPerView = getImagesPerView()
+  updateCarouselPosition(imagesPerView)
+
+  // Restart auto-play with filtered images
+  setTimeout(startCarouselAutoPlay, 1000)
 }
 
 function updateCarouselPosition(imagesPerView) {
@@ -129,10 +157,9 @@ function changeSlide(direction) {
   const track = document.getElementById("carouselTrack")
   if (!track) return
 
-  const images = track.querySelectorAll(".carousel-image")
-  const totalImages = images.length
+  const totalImages = filteredImages.length
   const imagesPerView = getImagesPerView()
-  const maxSlides = totalImages - imagesPerView
+  const maxSlides = Math.max(0, totalImages - imagesPerView)
 
   // Stop auto-play when user manually controls
   stopCarouselAutoPlay()
@@ -178,10 +205,9 @@ function changeSlideAuto() {
   const track = document.getElementById("carouselTrack")
   if (!track) return
 
-  const images = track.querySelectorAll(".carousel-image")
-  const totalImages = images.length
+  const totalImages = filteredImages.length
   const imagesPerView = getImagesPerView()
-  const maxSlides = totalImages - imagesPerView
+  const maxSlides = Math.max(0, totalImages - imagesPerView)
 
   currentSlide++
 
@@ -236,6 +262,7 @@ function downloadBrochure() {
     alert("Brochure download will be available soon. Please contact us for more information.")
   }, 100)
 }
+
 function handleContactForm() {
   const contactForm = document.getElementById("contactForm")
 
@@ -273,4 +300,10 @@ function handleContactForm() {
       contactForm.reset()
     })
   }
+}
+
+function getImagesPerView() {
+  if (window.innerWidth <= 480) return 1
+  if (window.innerWidth <= 768) return 2
+  return 4
 }
