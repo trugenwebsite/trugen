@@ -54,7 +54,7 @@
 
 .overview-card .highlight {
   font-size: 2rem;
-  color: #14b8a6;
+  color: #008080;
   font-weight: 700;
   margin: 0.5rem 0;
 }
@@ -98,7 +98,7 @@
 }
 
 .spec-card h3 {
-  color: #14b8a6;
+  color: #008080;
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
   font-weight: 600;
@@ -143,7 +143,7 @@
 }
 
 .team-card h3 {
-  color: #14b8a6;
+  color: #008080;
   font-size: 1.5rem;
   margin-bottom: 1rem;
   font-weight: 600;
@@ -180,7 +180,7 @@
 .institutions-list li:before,
 .hospitals-list li:before {
   content: "•";
-  color: #14b8a6;
+  color: #008080;
   font-weight: bold;
   position: absolute;
   left: 0;
@@ -229,7 +229,7 @@
 }
 
 .specialist-card h3 {
-  color: #14b8a6;
+  color: #008080;
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
   font-weight: 600;
@@ -292,7 +292,7 @@
 }
 
 .value-card h3 {
-  color: #14b8a6;
+  color: #008080;
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
   font-weight: 600;

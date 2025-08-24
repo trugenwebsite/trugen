@@ -88,25 +88,28 @@
     font-size: 1rem;
     line-height: 1.8;
     color: var(--medium-gray);
-    text-align: left; /* Changed from center */
-    /* Removed max-width and margin auto to allow left alignment */
+    text-align: left; 
 }
 
-/* --- NEW --- */
-/* Centered Image Placeholder */
+
 .section-image-placeholder {
-    text-align: center; /* This centers the image block */
+   
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    gap: 4rem;             
+    flex-wrap: wrap;      
 }
 
 .section-image-placeholder img {
-    max-width: 100%;
+    max-width: 45%; 
+    min-width: 300px; 
     height: auto;
-    max-height: 400px;
     border-radius: 8px;
     box-shadow: 0 10px 25px rgba(0,0,0,0.1);
 }
 
-/* Two-Column Grid for Lists */
+
 .list-grid-2-col {
     display: grid;
     grid-template-columns: 1fr;
