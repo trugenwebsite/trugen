@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Trugen Pharmaceuticals</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <div id="navbar-placeholder"></div>
+
+    <!-- Main Content -->
+    <main class="contact-page">
+        <!-- Hero Section -->
+        <section class="contact-hero">
+            <div class="container">
+                <h1>Contact Us</h1>
+                <p>Please get in touch with us for all your pharmaceutical needs. We're here to help you with our quality medicines and exceptional service.</p>
+            </div>
+        </section>
+
+        <!-- Contact Information Section -->
+        <section class="contact-info">
+            <div class="container">
+                <div class="contact-grid">
+                    <!-- Contact Numbers -->
+                    <div class="contact-card">
+                        <h3>Contact Numbers</h3>
+                        <div class="contact-details">
+                            <div class="contact-person">
+                                <h4>Mr. Vivek Garg</h4>
+                                <!-- <p>Director & CEO</p> -->
+                                <a href="tel:+919719593590" class="contact-link">+91-97195-93590</a>
+                            </div>
+                            <div class="contact-person">
+                                <h4>Mr. Neelesh Garg</h4>
+                                <!-- <p>Managing Director</p> -->
+                                <a href="tel:+919756918190" class="contact-link">+91-97569-18190</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Email Addresses -->
+                    <div class="contact-card">
+                        <h3>Email Addresses</h3>
+                        <div class="contact-details">
+                            <div class="email-item">
+                                <h4>Domestic Inquiries</h4>
+                                <a href="mailto:query@trugenpharma.com?subject=Domestic Inquiry&body=Hello, I would like to inquire about your pharmaceutical products." class="contact-link">query@trugenpharma.com</a>
+                            </div>
+                            <div class="email-item">
+                                <h4>Export Business</h4>
+                                <a href="mailto:export@trugenpharma.com?subject=Export Inquiry&body=Hello, I would like to inquire about your export services." class="contact-link">export@trugenpharma.com</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Form Section -->
+        <section class="contact-form-section">
+            <div class="container">
+                <div class="form-wrapper">
+                    <h2>Send Us a Message</h2>
+                    <p>Fill out the form below and we'll get back to you as soon as possible.</p>
+                    
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Name *</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="number">Phone Number *</label>
+                                <input type="tel" id="number" name="number" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="company">Company Name</label>
+                                <input type="text" id="company" name="company">
+                            </div>
+                            <div class="form-group">
+                                <label for="products">Choose Products *</label>
+                                <select id="products" name="products" required>
+                                    <option value="">Select a product</option>
+                                    <option value="capsules">Capsules</option>
+                                    <option value="tablets">Tablets</option>
+                                    <option value="sachets">Sachets</option>
+                                    <option value="syrups">Syrups</option>
+                                    <option value="others">Others</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" rows="5" placeholder="Please describe your requirements or inquiry..." required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

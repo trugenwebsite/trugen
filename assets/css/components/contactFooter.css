@@ -1,129 +1,264 @@
 /* Reset and base styles */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-}
+/* Added Font Awesome CDN import for icons */
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css");
 
-/* Footer styles */
+/* Complete redesign of footer with black background and improved layout */
 .contact-footer {
-    background-color: #000000;
-    color: #ffffff;
-    padding: 48px 0;
+  background-color: #000000;
+  color: #ffffff;
+  padding: 40px 0 20px 0;
 }
 
 .contact-footer .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
 }
 
+/* Updated grid layout for three separate address sections */
 .contact-footer .footer-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 32px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+  margin-bottom: 32px;
 }
 
 /* Company info section */
 .contact-footer .company-info {
-    margin-bottom: 16px;
+  margin-bottom: 16px;
 }
 
 .contact-footer .logo-container {
-    margin-bottom: 24px;
+  margin-bottom: 20px;
 }
 
 .contact-footer .company-logo {
-    width: 200px;
-    height: auto;
-    margin-bottom: 16px;
+  width: 180px;
+  height: auto;
+  margin-bottom: 16px;
 }
 
 .contact-footer .company-description {
-    color: #cccccc;
-    font-size: 14px;
-    line-height: 1.6;
+  color: #cccccc;
+  font-size: 14px;
+  line-height: 1.6;
+  max-width: 400px;
 }
 
-/* Address sections */
+/* Updated address sections with icon styling */
 .contact-footer .address-section {
-    margin-bottom: 16px;
+  margin-bottom: 16px;
 }
 
-/* THIS RULE IS NOW SPECIFIC TO THE FOOTER */
 .contact-footer .section-title {
-    font-size: 18px;
-    font-weight: 600;
-    margin-bottom: 16px;
-    color: #ffffff;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.contact-footer .section-title i {
+  color: #14b8a6;
+  font-size: 16px;
 }
 
 .contact-footer .address-content {
-    color: #cccccc;
-    font-size: 14px;
+  color: #cccccc;
+  font-size: 14px;
 }
 
 .contact-footer .address-content p {
-    margin-bottom: 8px;
+  margin-bottom: 6px;
+}
+
+/* Updated address link styling with icons */
+.contact-footer .address-link {
+  color: #cccccc;
+  text-decoration: none;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 12px;
+  transition: color 0.3s ease;
+}
+
+.contact-footer .address-link:hover {
+  color: #14b8a6;
+}
+
+.contact-footer .address-link i {
+  color: #14b8a6;
+  font-size: 16px;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+/* Added separate contact information section */
+.contact-footer .contact-info-section {
+  border-top: 1px solid #333333;
+  padding-top: 32px;
+  margin-bottom: 32px;
+}
+
+.contact-footer .contact-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+}
+
+.contact-footer .contact-group {
+  text-align: center;
+}
+
+.contact-footer .contact-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.contact-footer .contact-title i {
+  color: #14b8a6;
+  font-size: 16px;
 }
 
 .contact-footer .contact-links {
-    margin-top: 16px;
-}
-
-.contact-footer .contact-links p {
-    margin-bottom: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
 }
 
 .contact-footer .contact-link {
-    color: #cccccc;
-    text-decoration: none;
-    transition: color 0.3s ease;
+  color: #cccccc;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 6px;
+  background-color: rgba(255, 255, 255, 0.05);
 }
 
 .contact-footer .contact-link:hover {
-    color: #ffffff;
+  color: #14b8a6;
+  background-color: rgba(20, 184, 166, 0.1);
+  transform: translateY(-2px);
 }
 
-/* Copyright section */
+.contact-footer .contact-link i {
+  color: #14b8a6;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+/* Updated copyright section with social media icons */
 .contact-footer .copyright-section {
-    border-top: 1px solid #333333;
-    margin-top: 48px;
-    padding-top: 32px;
+  border-top: 1px solid #333333;
+  padding-top: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
 }
 
 .contact-footer .copyright-text {
-    text-align: center;
-    color: #999999;
-    font-size: 14px;
+  color: #14b8a6;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* Added social media icons styling */
+.contact-footer .social-media-icons {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.contact-footer .social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #cccccc;
+  text-decoration: none;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  font-size: 16px;
+}
+
+.contact-footer .social-icon:hover {
+  background-color: #14b8a6;
+  color: #ffffff;
+  transform: translateY(-2px);
 }
 
 /* Responsive design */
 @media (min-width: 768px) {
-    .contact-footer .footer-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 32px;
-    }
+  .contact-footer .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+
+  .contact-footer .company-info {
+    grid-column: span 2;
+  }
+
+  .contact-footer .contact-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+
+  .contact-footer .contact-group {
+    text-align: left;
+  }
+
+  .contact-footer .contact-title {
+    justify-content: flex-start;
+  }
+
+  .contact-footer .contact-links {
+    align-items: flex-start;
+  }
+
+  .contact-footer .copyright-section {
+    flex-wrap: nowrap;
+  }
 }
 
 @media (min-width: 1024px) {
-    .contact-footer .footer-grid {
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        gap: 32px;
-    }
-    
-    .contact-footer .company-info {
-        grid-column: span 1;
-    }
+  .contact-footer .footer-grid {
+    grid-template-columns: 1.2fr 1fr 1fr 1fr;
+    gap: 40px;
+  }
+
+  .contact-footer .company-info {
+    grid-column: span 1;
+  }
 }
 
-/* Hover effects */
-.contact-footer .contact-link:focus {
-    outline: 2px solid #ffffff;
-    outline-offset: 2px;
+/* Enhanced accessibility and focus states */
+.contact-footer .contact-link:focus,
+.contact-footer .address-link:focus,
+.contact-footer .social-icon:focus {
+  outline: 2px solid #14b8a6;
+  outline-offset: 2px;
+  border-radius: 6px;
 }

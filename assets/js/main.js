@@ -87,6 +87,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   initializeCarousel()
+  handleContactForm()
 })
 
 let currentSlide = 0
@@ -234,4 +235,42 @@ function downloadBrochure() {
   setTimeout(() => {
     alert("Brochure download will be available soon. Please contact us for more information.")
   }, 100)
+}
+function handleContactForm() {
+  const contactForm = document.getElementById("contactForm")
+
+  if (contactForm) {
+    contactForm.addEventListener("submit", (e) => {
+      e.preventDefault()
+
+      // Get form data
+      const formData = new FormData(contactForm)
+      const name = formData.get("name")
+      const number = formData.get("number")
+      const company = formData.get("company")
+      const products = formData.get("products")
+      const message = formData.get("message")
+
+      // Basic validation
+      if (!name || !number || !products || !message) {
+        alert("Please fill in all required fields.")
+        return
+      }
+
+      // Create email body
+      const emailBody = `Name: ${name}%0D%0APhone: ${number}%0D%0ACompany: ${company || "Not specified"}%0D%0AProduct Interest: ${products}%0D%0AMessage: ${message}`
+
+      // Create mailto link
+      const mailtoLink = `mailto:query@trugenpharma.com?subject=Contact Form Inquiry from ${name}&body=${emailBody}`
+
+      // Open email client
+      window.location.href = mailtoLink
+
+      // Show success message
+      alert("Thank you for your inquiry! Your email client will open to send the message.")
+
+      // Reset form
+      contactForm.reset()
+    })
+  }
 }
