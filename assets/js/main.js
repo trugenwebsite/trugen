@@ -250,18 +250,27 @@ function redirectToProduct(productType) {
 function downloadBrochure() {
   // Create a temporary link element to trigger download
   const link = document.createElement("a")
-  link.href = "assets/documents/trugen-brochure.pdf" // You'll need to add the actual brochure file
+  link.href = "/assets/pdf/brochure.pdf"
   link.download = "Trugen-Pharmaceuticals-Brochure.pdf"
   link.style.display = "none"
-
   document.body.appendChild(link)
   link.click()
   document.body.removeChild(link)
+}
 
-  // Fallback: show alert if file doesn't exist
-  setTimeout(() => {
-    alert("Brochure download will be available soon. Please contact us for more information.")
-  }, 100)
+function downloadProductList(type) {
+  const link = document.createElement("a")
+  if (type === 'domestic') {
+    link.href = "/assets/pdf/domestic-product.pdf"
+    link.download = "Trugen-Domestic-Product-List.pdf"
+  } else {
+    link.href = "/assets/pdf/export.pdf"
+    link.download = "Trugen-Export-Product-List.pdf"
+  }
+  link.style.display = "none"
+  document.body.appendChild(link)
+  link.click()
+  document.body.removeChild(link)
 }
 
 function handleContactForm() {
