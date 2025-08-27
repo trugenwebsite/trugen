@@ -1,76 +1,198 @@
-/* Breadcrumb Navigation */
+/* Breadcrumb and Page Header Styles */
 .breadcrumb {
     padding: 1rem 0;
     background-color: var(--light-gray);
     border-bottom: 1px solid var(--border-color);
 }
-
-.breadcrumb .container {
-    padding-left: 2rem;
-}
-
-/* Page Header */
-.page-header {
-    padding: 20px 0;
-    background-color: var(--light-gray);
-    text-align: left;
-    border-bottom: 1px solid var(--border-color);
-}
-
-.page-header .container {
-    padding-left: 2rem;
-}
-
-.page-header h1 {
-    font-size: 2.8rem;
-    color: var(--primary-color);
-}
-
-.page-header p {
-    font-size: 1.2rem;
-    color: var(--text-color);
-    max-width: 800px;
-    margin: 0;
-    opacity: 0.9;
-}
-
 .breadcrumb nav {
     display: flex;
     align-items: center;
     gap: 0.5rem;
 }
-
 .breadcrumb a {
     color: var(--primary-color);
     text-decoration: none;
     font-size: 0.9rem;
+    font-weight: 500;
 }
-
-.breadcrumb a:hover {
-    text-decoration: underline;
-}
-
+.breadcrumb a:hover { text-decoration: underline; }
 .breadcrumb span {
-    color: var(--text-color);
-    opacity: 0.7;
+    color: var(--medium-gray);
     font-size: 0.9rem;
 }
-
 .breadcrumb .separator {
-    color: var(--text-color);
+    color: var(--medium-gray);
     opacity: 0.5;
-    margin: 0 0.25rem;
 }
 
-/* Remove old hero section styles */
-.hero-section,
-.ethical-hero,
-.hero-overlay,
-.hero-content {
-    /* Override any existing styles to prevent conflicts */
-    background: none;
-    padding: 0;
-    margin: 0;
+/* Marketing Divisions Section */
+.marketing-divisions {
+    padding: 4rem 0;
+}
+.marketing-divisions h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+.marketing-divisions .section-intro {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 3rem auto;
+    color: var(--medium-gray);
+    font-size: 1.1rem;
 }
 
-/* Rest of the existing styles remain unchanged */
+/* --- CHANGED: Switched to Flexbox for better alignment --- */
+.divisions-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* This centers all items, including the last row */
+    gap: 2rem;
+}
+.division-card {
+    background: var(--light-gray);
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+    flex: 1 1 300px; /* Flex properties for responsive width */
+    max-width: 350px;
+}
+.division-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-color);
+    box-shadow: 0 10px 25px rgba(0, 128, 128, 0.1);
+}
+.division-card h3 {
+    font-size: 1.3rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+.division-card p {
+    color: var(--medium-gray);
+}
+
+
+/* --- CHANGED: Ethical Presence Section Layout --- */
+.ethical-presence {
+    padding: 4rem 0;
+    background-color: var(--light-gray);
+}
+.presence-content {
+    display: grid; /* Use Grid for a two-column layout */
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+.presence-text h2 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+.presence-text p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--medium-gray);
+}
+.presence-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+.stat-item {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    text-align: center;
+    border-left: 5px solid var(--primary-color);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+.stat-label {
+    font-size: 1rem;
+    color: var(--dark-gray);
+    font-weight: 500;
+}
+
+
+/* Domestic Operations Section */
+.domestic-operations {
+    padding: 4rem 0;
+}
+.domestic-operations h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 3rem;
+}
+.operations-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+.operations-text p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--medium-gray);
+    margin-bottom: 1.5rem;
+}
+.operations-image img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+/* Operative States Section */
+.operative-states {
+    padding: 4rem 0;
+    background-color: var(--light-gray);
+}
+.operative-states h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+.states-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    max-width: 900px;
+    margin: 2rem auto 0 auto;
+}
+.state-item {
+    background: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 500;
+    color: var(--dark-gray);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+}
+
+
+/* --- RESPONSIVE ADJUSTMENTS --- */
+@media (max-width: 992px) {
+    /* Stack the two-column layouts */
+    .presence-content,
+    .operations-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Adjust headings for smaller screens */
+    .marketing-divisions h2,
+    .presence-text h2,
+    .domestic-operations h2,
+    .operative-states h2 {
+        font-size: 2rem;
+    }
+}
