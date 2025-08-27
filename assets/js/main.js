@@ -1,16 +1,17 @@
 document.addEventListener("DOMContentLoaded", () => {
   // --- Reusable Component Loader ---
-  const loadComponent = (componentPath, placeholderId) => {
+  const loadComponent = (componentPath, placeholderId, callback = null) => {
     fetch(componentPath)
       .then((response) => (response.ok ? response.text() : Promise.reject("Component not found.")))
       .then((data) => {
         document.getElementById(placeholderId).innerHTML = data
-        setTimeout(initializeNavbar, 100)
+        if (callback) callback()
       })
       .catch((error) => console.error(`Error loading ${placeholderId}:`, error))
   }
 
-  loadComponent("/components/navbar.html", "navbar-placeholder")
+  // Load navbar first and initialize it
+  loadComponent("/components/navbar.html", "navbar-placeholder", initializeNavbar)
   loadComponent("/components/contactFooter.html", "footer-placeholder")
 
   function initializeNavbar() {
