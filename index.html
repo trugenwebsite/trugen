@@ -6,7 +6,10 @@
     <title>TRUGEN PHARMACEUTICALS PVT. LTD - Home</title>
     <link rel="stylesheet" href="assets/css/style.css" />
     <!-- Added Font Awesome CDN for icons to display properly -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -47,7 +50,7 @@
           <div class="products-grid">
             <div class="product-card" onclick="redirectToProduct('tablets')">
               <img
-                src="/placeholder.svg?height=200&width=300"
+                src="/assets/images/tablets.webp"
                 alt="tablets"
                 class="product-image"
               />
@@ -55,7 +58,7 @@
             </div>
             <div class="product-card" onclick="redirectToProduct('capsules')">
               <img
-                src="/placeholder.svg?height=200&width=300"
+                src="/assets/images/capsules.webp"
                 alt="capsules"
                 class="product-image"
               />
@@ -63,7 +66,7 @@
             </div>
             <div class="product-card" onclick="redirectToProduct('syrups')">
               <img
-                src="/placeholder.svg?height=200&width=300"
+                src="/assets/images/syrups.webp"
                 alt="Syrups"
                 class="product-image"
               />
@@ -71,7 +74,7 @@
             </div>
             <div class="product-card" onclick="redirectToProduct('sachets')">
               <img
-                src="/placeholder.svg?height=200&width=300"
+                src="/assets/images/sachets.webp"
                 alt="Sachets"
                 class="product-image"
               />
@@ -111,72 +114,175 @@
             <div class="carousel-dropdown">
               <select id="facilityFilter" onchange="filterCarouselImages()">
                 <option value="all">All Facilities</option>
-                <option value="manufacturing">Manufacturing</option>
-                <option value="laboratory">Laboratory</option>
-                <option value="quality">Quality Control</option>
-                <option value="research">R&D Facility</option>
-                <option value="packaging">Packaging</option>
-                <option value="cleanroom">Clean Room</option>
-                <option value="storage">Storage</option>
-                <option value="testing">Testing Lab</option>
+                <option value="capsule">Capsule</option>
+                <option value="coating">Coating</option>
+                <option value="compression">Compression</option>
+                <option value="granulation">Granulation</option>
+                <option value="liquid">Liquid</option>
+                <option value="office">Office</option>
+                <option value="packing">Packing</option>
+                <option value="plant">Plant</option>
+                <option value="quality-control">Quality Control Lab</option>
+                <option value="research">Research Department</option>
+                <option value="stability">Stability Chambers</option>
               </select>
             </div>
           </div>
-          
+
           <div class="carousel-container">
             <button class="carousel-btn prev-btn" onclick="changeSlide(-1)">
               &#8249;
             </button>
             <div class="carousel-wrapper">
               <div class="carousel-track" id="carouselTrack">
-                <!-- Added data attributes for filtering -->
+                <!-- Capsule -->
                 <img
-                  src="/placeholder.svg?height=300&width=400"
-                  alt="Manufacturing 1"
+                  src="/assets/images/capsule/7X2A2243.webp"
+                  alt="Capsule Facility"
                   class="carousel-image"
-                  data-category="manufacturing"
+                  data-category="capsule"
+                />
+                <!-- Coating -->
+                <img
+                  src="/assets/images/coating/2.webp"
+                  alt="Coating Facility"
+                  class="carousel-image"
+                  data-category="coating"
+                />
+                 <img
+                  src="/assets/images/coating/7X2A2162.webp"
+                  alt="Coating Facility"
+                  class="carousel-image"
+                  data-category="coating"
+                />
+                <!-- Compression -->
+                <img
+                  src="/assets/images/compression/1.webp"
+                  alt="Compression Facility"
+                  class="carousel-image"
+                  data-category="compression"
+                /> 
+                <img
+                  src="/assets/images/compression/7X2A2141.webp"
+                  alt="Compression Facility"
+                  class="carousel-image"
+                  data-category="compression"
+                />
+                <!-- Granulation -->
+                <img
+                  src="/assets/images/granulation/7X2A2079.webp"
+                  alt="Granulation Facility"
+                  class="carousel-image"
+                  data-category="granulation"
                 />
                 <img
-                  src="/placeholder.svg?height=300&width=400"
-                  alt="Laboratory 1"
+                  src="/assets/images/granulation/7X2A2117.webp"
+                  alt="Granulation Facility"
                   class="carousel-image"
-                  data-category="laboratory"
+                  data-category="granulation"
+                />
+                <!-- Liquid -->
+                <img
+                  src="/assets/images/liquid/5.jpg"
+                  alt="Liquid Facility"
+                  class="carousel-image"
+                  data-category="liquid"
                 />
                 <img
-                  src="/placeholder.svg?height=300&width=400"
-                  alt="Quality Control"
+                  src="/assets/images/liquid/7X2A2300.webp"
+                  alt="Liquid Facility"
                   class="carousel-image"
-                  data-category="quality"
+                  data-category="liquid"
                 />
                 <img
-                  src="/placeholder.svg?height=300&width=400"
-                  alt="R&D Facility"
+                  src="/assets/images/liquid/7X2A2308.webp"
+                  alt="Liquid Facility"
+                  class="carousel-image"
+                  data-category="liquid"
+                />
+                <!-- Office -->
+                <img
+                  src="/assets/images/office/4.webp"
+                  alt="Office"
+                  class="carousel-image"
+                  data-category="office"
+                />
+                 <img
+                  src="/assets/images/office/7X2A2466.webp"
+                  alt="Office"
+                  class="carousel-image"
+                  data-category="office"
+                />
+                 <img
+                  src="/assets/images/office/7X2A2481.webp"
+                  alt="Office"
+                  class="carousel-image"
+                  data-category="office"
+                />
+                <!-- Packing -->
+                <img
+                  src="/assets/images/packing/7X2A2184.webp"
+                  alt="Packing Facility"
+                  class="carousel-image"
+                  data-category="packing"
+                />
+                 <img
+                  src="/assets/images/packing/7X2A2212.webp"
+                  alt="Office"
+                  class="carousel-image"
+                  data-category="office"
+                />
+                <!-- Plant -->
+                <img
+                  src="/assets/images/plant/7X2A2284.webp"
+                  alt="Plant Facility"
+                  class="carousel-image"
+                  data-category="plant"
+                />
+                <img
+                  src="/assets/images/plant/Screenshot-223.webp"
+                  alt="Plant Facility"
+                  class="carousel-image"
+                  data-category="plant"
+                />
+                <!-- Quality Control Lab -->
+                <img
+                  src="/assets/images/quality-control/3.webp"
+                  alt="Quality Control Lab"
+                  class="carousel-image"
+                  data-category="quality-control"
+                />
+                <img
+                  src="/assets/images/quality-control/7X2A2406.webp"
+                  alt="Quality Control Lab"
+                  class="carousel-image"
+                  data-category="quality-control"
+                />
+                <!-- Research Department -->
+                <img
+                  src="/assets/images/r&d/7X2A2419.webp"
+                  alt="Research Department"
                   class="carousel-image"
                   data-category="research"
                 />
                 <img
-                  src="/placeholder.svg?height=300&width=400"
-                  alt="Packaging"
+                  src="/assets/images/r&d/7X2A2431.webp"
+                  alt="Research Department"
                   class="carousel-image"
-                  data-category="packaging"
+                  data-category="research"
                 />
                 <img
-                  src="/placeholder.svg?height=300&width=400"
-                  alt="Clean Room"
+                  src="/assets/images/r&d/7X2A2441.webp"
+                  alt="Research Department"
                   class="carousel-image"
-                  data-category="cleanroom"
+                  data-category="research"
                 />
+                <!-- Stability Chambers -->
                 <img
-                  src="/placeholder.svg?height=300&width=400"
-                  alt="Storage"
+                  src="/assets/images/stability-chambers/7X2A2391.webp"
+                  alt="Stability Chambers"
                   class="carousel-image"
-                  data-category="storage"
-                />
-                <img
-                  src="/placeholder.svg?height=300&width=400"
-                  alt="Testing Lab"
-                  class="carousel-image"
-                  data-category="testing"
+                  data-category="stability"
                 />
               </div>
             </div>

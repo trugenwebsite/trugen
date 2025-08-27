@@ -10,18 +10,31 @@
 
 .main-nav .container {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between;  /* keeps logo left, menu right */
   align-items: center;
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 0 auto;                  /* center container within screen */
   padding: 0 20px;
   height: 70px;
 }
 
+.nav-logo {
+  display: flex;
+  align-items: center;
+  margin-left: 15px;  
+}
+
 .nav-logo img {
-  height: 50px;
+  height: 45px;       /* slightly smaller */
   width: auto;
-  transition: transform 0.3s ease;
+  padding: 3px 0;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  margin-left: auto;  /* ensures nav-items stick to the right */
 }
 
 .nav-logo:hover img {
