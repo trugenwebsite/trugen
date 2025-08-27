@@ -3,29 +3,6 @@
   min-height: 100vh;
 }
 
-/* Hero Section */
-.hero-section {
-  background: linear-gradient(135deg, #008080 0%, #0d9488 100%);
-  color: white;
-  padding: 120px 0 80px;
-  text-align: center;
-}
-
-.hero-content h1 {
-  font-size: 3.5rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.hero-content p {
-  font-size: 1.25rem;
-  max-width: 800px;
-  margin: 0 auto;
-  opacity: 0.95;
-  line-height: 1.6;
-}
-
 /* Who We Are Section */
 .who-we-are-section {
   padding: 80px 0;
@@ -56,6 +33,7 @@
 
 .image-content img {
   width: 100%;
+  margin-left: 20px;
   height: auto;
   border-radius: 12px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
