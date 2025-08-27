@@ -30,18 +30,20 @@
 }
 
 /* Company info section - Left side */
-.contact-footer .company-info {
-  margin-bottom: 24px;
-}
-
 .contact-footer .logo-container {
+  display: inline-block;
+  background-color: #ffffff;          /* white background */
+  padding: 12px 20px;                 /* spacing around logo */
+  border-radius: 10px;                /* rounded corners */
+  border: 1px solid #e5e5e5;          /* light border */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15); /* subtle shadow */
   margin-bottom: 20px;
 }
 
 .contact-footer .company-logo {
-  width: 180px;
+  width: 160px;    /* slightly smaller to fit container nicely */
   height: auto;
-  margin-bottom: 16px;
+  display: block;
 }
 
 .contact-footer .company-description {
