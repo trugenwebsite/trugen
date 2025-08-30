@@ -1,4 +1,53 @@
 document.addEventListener('DOMContentLoaded', () => {
+  // Modal functionality
+  const modal = document.getElementById('imageModal');
+  const modalImg = document.getElementById('modalImage');
+  const closeBtn = document.querySelector('.close-modal');
+  const productCards = document.querySelectorAll('.product-card');
+
+  // Function to open modal
+  function openModal(imgSrc, altText) {
+      modalImg.src = imgSrc;
+      modalImg.alt = altText;
+      modal.classList.add('show');
+      document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
+  }
+
+  // Function to close modal
+  function closeModal() {
+      modal.classList.remove('show');
+      document.body.style.overflow = ''; // Restore scrolling
+      setTimeout(() => {
+          modalImg.src = ''; // Clear the source after animation
+      }, 300);
+  }
+
+  // Add click event to all product cards
+  productCards.forEach(card => {
+      const img = card.querySelector('.product-image img');
+      card.addEventListener('click', () => {
+          openModal(img.src, img.alt);
+      });
+  });
+
+  // Close modal when clicking the close button
+  closeBtn.addEventListener('click', closeModal);
+
+  // Close modal when clicking outside the image
+  modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+          closeModal();
+      }
+  });
+
+  // Close modal with Escape key
+  document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('show')) {
+          closeModal();
+      }
+  });
+
+  // Product page functionality
   const pageId = document.body.id;
   
   // DOM Elements

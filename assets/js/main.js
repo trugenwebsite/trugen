@@ -100,19 +100,56 @@ function initializeCarousel() {
   const track = document.getElementById("carouselTrack")
   if (!track) return
 
-  allImages = Array.from(track.querySelectorAll(".carousel-image"))
-  filteredImages = [...allImages]
+  // Initialize Intersection Observer for lazy loading
+  const carouselSection = document.querySelector('.carousel-section')
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          // Initialize carousel only when it's visible
+          initializeCarouselContent()
+          observer.unobserve(entry.target)
+        }
+      })
+    },
+    { threshold: 0.1 }
+  )
 
-  const totalImages = filteredImages.length
+  if (carouselSection) {
+    observer.observe(carouselSection)
+  }
+}
+
+function initializeCarouselContent() {
+  const track = document.getElementById("carouselTrack")
+  if (!track) return
+
+  // Pre-load only visible images initially
   const imagesPerView = getImagesPerView()
+  allImages = Array.from(track.querySelectorAll(".carousel-image"))
+  
+  // Set display: none for non-visible images initially
+  allImages.forEach((img, index) => {
+    if (index >= imagesPerView) {
+      img.style.display = 'none'
+    }
+  })
+
+  filteredImages = [...allImages]
 
   // Start auto-increment
   startCarouselAutoPlay()
 
-  // Handle window resize for responsive images per view
+  // Optimize resize handler with debounce
+  let resizeTimeout
   window.addEventListener("resize", () => {
-    const newImagesPerView = getImagesPerView()
-    updateCarouselPosition(newImagesPerView)
+    if (resizeTimeout) {
+      clearTimeout(resizeTimeout)
+    }
+    resizeTimeout = setTimeout(() => {
+      const newImagesPerView = getImagesPerView()
+      updateCarouselPosition(newImagesPerView)
+    }, 150)
   })
 }
 
@@ -152,6 +189,16 @@ function updateCarouselPosition(imagesPerView) {
 
   const slideWidth = 100 / imagesPerView
   track.style.transform = `translateX(-${currentSlide * slideWidth}%)`
+  
+  // Show images that will be visible in the next few slides
+  const buffer = 2 // Number of extra slides to preload
+  filteredImages.forEach((img, index) => {
+    const isInViewportRange = (
+      index >= currentSlide - (imagesPerView * buffer) && 
+      index <= currentSlide + (imagesPerView * (1 + buffer))
+    )
+    img.style.display = isInViewportRange ? 'block' : 'none'
+  })
 }
 
 function changeSlide(direction) {

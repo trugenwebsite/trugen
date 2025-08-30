@@ -1,0 +1,31 @@
+.carousel-section {
+  contain: content;  /* Optimize browser's rendering */
+}
+
+.carousel-image {
+  will-change: transform;  /* Hint browser about transform animations */
+  backface-visibility: hidden;  /* Prevent flickering */
+  transform: translateZ(0);  /* Force GPU acceleration */
+  contain: paint;  /* Optimize painting */
+}
+
+.carousel-track {
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+/* Add a loading placeholder effect */
+.carousel-image:not([src]) {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
