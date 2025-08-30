@@ -100,6 +100,53 @@ function initializeCarousel() {
   const track = document.getElementById("carouselTrack")
   if (!track) return
 
+  // Initialize modal functionality
+  const modal = document.getElementById('carouselImageModal');
+  const modalImg = document.getElementById('carouselModalImage');
+  const closeBtn = modal.querySelector('.close-modal');
+
+  // Function to open modal
+  function openModal(imgSrc, altText) {
+    modalImg.src = imgSrc;
+    modalImg.alt = altText;
+    modal.classList.add('show');
+    document.body.style.overflow = 'hidden'; // Prevent scrolling
+  }
+
+  // Function to close modal
+  function closeModal() {
+    modal.classList.remove('show');
+    document.body.style.overflow = ''; // Restore scrolling
+    setTimeout(() => {
+      modalImg.src = ''; // Clear the source after animation
+    }, 300);
+  }
+
+  // Add click event to carousel images
+  track.addEventListener('click', (e) => {
+    const img = e.target.closest('.carousel-image');
+    if (img) {
+      openModal(img.src, img.alt);
+    }
+  });
+
+  // Close modal when clicking the close button
+  closeBtn.addEventListener('click', closeModal);
+
+  // Close modal when clicking outside the image
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      closeModal();
+    }
+  });
+
+  // Close modal with Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('show')) {
+      closeModal();
+    }
+  });
+
   // Initialize Intersection Observer for lazy loading
   const carouselSection = document.querySelector('.carousel-section')
   const observer = new IntersectionObserver(
@@ -156,6 +203,8 @@ function initializeCarouselContent() {
 function filterCarouselImages() {
   const filterValue = document.getElementById("facilityFilter").value
   const track = document.getElementById("carouselTrack")
+  const prevBtn = document.querySelector('.prev-btn')
+  const nextBtn = document.querySelector('.next-btn')
 
   if (!track) return
 
@@ -177,19 +226,50 @@ function filterCarouselImages() {
   // Reset current slide and update position
   currentSlide = 0
   const imagesPerView = getImagesPerView()
+
+  // Show/hide navigation arrows based on filter
+  if (filterValue === "all") {
+    prevBtn.style.display = "block"
+    nextBtn.style.display = "block"
+    // Check if we should disable the prev button
+    prevBtn.disabled = currentSlide === 0
+    nextBtn.disabled = currentSlide >= filteredImages.length - imagesPerView
+  } else {
+    prevBtn.style.display = "none"
+    nextBtn.style.display = "none"
+  }
+
   updateCarouselPosition(imagesPerView)
 
-  // Restart auto-play with filtered images
-  setTimeout(startCarouselAutoPlay, 1000)
+  // Only restart auto-play if showing all images
+  if (filterValue === "all") {
+    setTimeout(startCarouselAutoPlay, 1000)
+  }
 }
 
 function updateCarouselPosition(imagesPerView) {
   const track = document.getElementById("carouselTrack")
+  const prevBtn = document.querySelector('.prev-btn')
+  const nextBtn = document.querySelector('.next-btn')
   if (!track) return
+
+  const filterValue = document.getElementById("facilityFilter").value
+  const totalImages = filteredImages.length
+  const maxSlides = Math.max(0, totalImages - imagesPerView)
 
   const slideWidth = 100 / imagesPerView
   track.style.transform = `translateX(-${currentSlide * slideWidth}%)`
   
+  // Update navigation buttons if showing all images
+  if (filterValue === "all") {
+    prevBtn.disabled = currentSlide === 0
+    nextBtn.disabled = currentSlide >= maxSlides
+    
+    // Add visual indication for disabled state
+    prevBtn.style.opacity = currentSlide === 0 ? "0.5" : "1"
+    nextBtn.style.opacity = currentSlide >= maxSlides ? "0.5" : "1"
+  }
+
   // Show images that will be visible in the next few slides
   const buffer = 2 // Number of extra slides to preload
   filteredImages.forEach((img, index) => {
@@ -197,13 +277,18 @@ function updateCarouselPosition(imagesPerView) {
       index >= currentSlide - (imagesPerView * buffer) && 
       index <= currentSlide + (imagesPerView * (1 + buffer))
     )
-    img.style.display = isInViewportRange ? 'block' : 'none'
+    if (filterValue === "all" || img.dataset.category === filterValue) {
+      img.style.display = isInViewportRange ? 'block' : 'none'
+    } else {
+      img.style.display = 'none'
+    }
   })
 }
 
 function changeSlide(direction) {
   const track = document.getElementById("carouselTrack")
-  if (!track) return
+  const filterValue = document.getElementById("facilityFilter").value
+  if (!track || filterValue !== "all") return
 
   const totalImages = filteredImages.length
   const imagesPerView = getImagesPerView()
@@ -212,28 +297,19 @@ function changeSlide(direction) {
   // Stop auto-play when user manually controls
   stopCarouselAutoPlay()
 
-  currentSlide += direction
+  // Calculate new slide position
+  const newSlide = currentSlide + direction
 
-  if (currentSlide < 0) {
-    track.style.transition = "none"
-    currentSlide = maxSlides
-    updateCarouselPosition(imagesPerView)
-    setTimeout(() => {
-      track.style.transition = "transform 0.5s ease"
-    }, 50)
-  } else if (currentSlide > maxSlides) {
-    track.style.transition = "none"
-    currentSlide = 0
-    updateCarouselPosition(imagesPerView)
-    setTimeout(() => {
-      track.style.transition = "transform 0.5s ease"
-    }, 50)
-  } else {
+  // Only update if within bounds
+  if (newSlide >= 0 && newSlide <= maxSlides) {
+    currentSlide = newSlide
     updateCarouselPosition(imagesPerView)
   }
 
-  // Restart auto-play after manual control
-  setTimeout(startCarouselAutoPlay, 2000)
+  // Restart auto-play after manual control only if showing all images
+  if (filterValue === "all") {
+    setTimeout(startCarouselAutoPlay, 2000)
+  }
 }
 
 function startCarouselAutoPlay() {

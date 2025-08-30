@@ -10,15 +10,15 @@ document.addEventListener('DOMContentLoaded', () => {
       modalImg.src = imgSrc;
       modalImg.alt = altText;
       modal.classList.add('show');
-      document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
+      document.body.style.overflow = 'hidden'; 
   }
 
   // Function to close modal
   function closeModal() {
       modal.classList.remove('show');
-      document.body.style.overflow = ''; // Restore scrolling
+      document.body.style.overflow = ''; 
       setTimeout(() => {
-          modalImg.src = ''; // Clear the source after animation
+          modalImg.src = ''; 
       }, 300);
   }
 

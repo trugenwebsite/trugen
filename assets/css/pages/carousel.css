@@ -29,3 +29,32 @@
     background-position: -200% 0;
   }
 }
+
+/* Carousel Navigation Buttons */
+.carousel-btn {
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  font-size: 24px;
+  padding: 10px 15px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.carousel-btn:hover:not(:disabled) {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.carousel-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+/* Hide navigation buttons when not showing all images */
+.carousel-btn[style*="display: none"] {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s 0.3s, opacity 0.3s ease;
+}
