@@ -245,11 +245,11 @@ function updateCarouselPosition(imagesPerView) {
   // Update navigation buttons
   if (prevBtn && nextBtn) {
     prevBtn.disabled = currentSlide === 0
-    nextBtn.disabled = currentSlide >= maxSlides
+    nextBtn.disabled = currentSlide >= maxSlides - 5
     
     // Add visual indication for disabled state
     prevBtn.style.opacity = currentSlide === 0 ? "0.5" : "1"
-    nextBtn.style.opacity = currentSlide >= maxSlides ? "0.5" : "1"
+    nextBtn.style.opacity = currentSlide >= maxSlides - 5 ? "0.5" : "1"
   }
 
   // Show images that will be visible in the next few slides
@@ -316,7 +316,7 @@ function changeSlideAuto() {
   const maxSlides = Math.max(0, totalImages - imagesPerView)
 
   // If we're at the last slide, go back to the beginning
-  if (currentSlide >= maxSlides) {
+  if (currentSlide >= maxSlides - 5) {
     // Disable transition for seamless loop
     track.style.transition = "none"
     currentSlide = 0
