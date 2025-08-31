@@ -24,12 +24,12 @@
 }
 
 .filter-btn:hover {
-    background-color: #0068B5;
+    background-color: #14b8a6;
     color: white;
 }
 
 .filter-btn.active {
-    background-color: #0068B5;
+    background-color: #14b8a6;
     color: white;
 }
 
