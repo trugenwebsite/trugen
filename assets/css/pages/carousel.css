@@ -31,15 +31,39 @@
 }
 
 /* Carousel Navigation Buttons */
+.carousel-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0;
+}
+
 .carousel-btn {
   cursor: pointer;
   background: rgba(0, 0, 0, 0.5);
   color: white;
   border: none;
   font-size: 24px;
-  padding: 10px 15px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
   transition: all 0.3s ease;
+}
+
+.prev-btn {
+  left: 10px;
+}
+
+.next-btn {
+  right: 10px;
 }
 
 .carousel-btn:hover:not(:disabled) {
@@ -57,4 +81,28 @@
   visibility: hidden;
   opacity: 0;
   transition: visibility 0s 0.3s, opacity 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .carousel-btn {
+    width: 35px;
+    height: 35px;
+    font-size: 20px;
+  }
+
+  .prev-btn {
+    left: 5px;
+  }
+
+  .next-btn {
+    right: 5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-btn {
+    width: 30px;
+    height: 30px;
+    font-size: 18px;
+  }
 }
