@@ -155,6 +155,7 @@ function initializeCarousel() {
         if (entry.isIntersecting) {
           // Initialize carousel only when it's visible
           initializeCarouselContent()
+          initializeFilteredImages() // Initialize all images as filtered
           observer.unobserve(entry.target)
         }
       })
@@ -200,51 +201,33 @@ function initializeCarouselContent() {
   })
 }
 
-function filterCarouselImages() {
-  const filterValue = document.getElementById("facilityFilter").value
+function initializeFilteredImages() {
   const track = document.getElementById("carouselTrack")
-  const prevBtn = document.querySelector('.prev-btn')
-  const nextBtn = document.querySelector('.next-btn')
-
   if (!track) return
 
-  // Stop auto-play during filtering
-  stopCarouselAutoPlay()
-
-  // Show/hide images based on filter
+  // Set all images to be visible and part of filtered images
   allImages.forEach((img) => {
-    if (filterValue === "all" || img.dataset.category === filterValue) {
-      img.style.display = "block"
-    } else {
-      img.style.display = "none"
-    }
+    img.style.display = "block"
   })
 
-  // Update filtered images array
-  filteredImages = allImages.filter((img) => filterValue === "all" || img.dataset.category === filterValue)
+  // All images are now filtered images
+  filteredImages = [...allImages]
 
-  // Reset current slide and update position
-  currentSlide = 0
   const imagesPerView = getImagesPerView()
+  currentSlide = 0
 
-  // Show/hide navigation arrows based on filter
-  if (filterValue === "all") {
+  // Show navigation arrows
+  const prevBtn = document.querySelector('.prev-btn')
+  const nextBtn = document.querySelector('.next-btn')
+  if (prevBtn && nextBtn) {
     prevBtn.style.display = "block"
     nextBtn.style.display = "block"
-    // Check if we should disable the prev button
     prevBtn.disabled = currentSlide === 0
     nextBtn.disabled = currentSlide >= filteredImages.length - imagesPerView
-  } else {
-    prevBtn.style.display = "none"
-    nextBtn.style.display = "none"
   }
 
   updateCarouselPosition(imagesPerView)
-
-  // Only restart auto-play if showing all images
-  if (filterValue === "all") {
-    setTimeout(startCarouselAutoPlay, 1000)
-  }
+  startCarouselAutoPlay()
 }
 
 function updateCarouselPosition(imagesPerView) {
@@ -253,15 +236,14 @@ function updateCarouselPosition(imagesPerView) {
   const nextBtn = document.querySelector('.next-btn')
   if (!track) return
 
-  const filterValue = document.getElementById("facilityFilter").value
   const totalImages = filteredImages.length
   const maxSlides = Math.max(0, totalImages - imagesPerView)
 
   const slideWidth = 100 / imagesPerView
   track.style.transform = `translateX(-${currentSlide * slideWidth}%)`
   
-  // Update navigation buttons if showing all images
-  if (filterValue === "all") {
+  // Update navigation buttons
+  if (prevBtn && nextBtn) {
     prevBtn.disabled = currentSlide === 0
     nextBtn.disabled = currentSlide >= maxSlides
     
@@ -277,18 +259,13 @@ function updateCarouselPosition(imagesPerView) {
       index >= currentSlide - (imagesPerView * buffer) && 
       index <= currentSlide + (imagesPerView * (1 + buffer))
     )
-    if (filterValue === "all" || img.dataset.category === filterValue) {
-      img.style.display = isInViewportRange ? 'block' : 'none'
-    } else {
-      img.style.display = 'none'
-    }
+    img.style.display = isInViewportRange ? 'block' : 'none'
   })
 }
 
 function changeSlide(direction) {
   const track = document.getElementById("carouselTrack")
-  const filterValue = document.getElementById("facilityFilter").value
-  if (!track || filterValue !== "all") return
+  if (!track) return
 
   const totalImages = filteredImages.length
   const imagesPerView = getImagesPerView()
@@ -306,10 +283,8 @@ function changeSlide(direction) {
     updateCarouselPosition(imagesPerView)
   }
 
-  // Restart auto-play after manual control only if showing all images
-  if (filterValue === "all") {
-    setTimeout(startCarouselAutoPlay, 2000)
-  }
+  // Restart auto-play after delay
+  setTimeout(startCarouselAutoPlay, 2000)
 }
 
 function startCarouselAutoPlay() {
