@@ -277,11 +277,18 @@ function changeSlide(direction) {
   // Calculate new slide position
   const newSlide = currentSlide + direction
 
-  // Only update if within bounds
-  if (newSlide >= 0 && newSlide <= maxSlides) {
-    currentSlide = newSlide
-    updateCarouselPosition(imagesPerView)
+  // Check bounds and wrap around if needed
+  if (direction > 0 && currentSlide >= maxSlides) {
+    // If going forward at the end, stay at the end
+    return;
+  } else if (direction < 0 && currentSlide <= 0) {
+    // If going backward at the start, stay at the start
+    return;
   }
+
+  // Update current slide
+  currentSlide = newSlide;
+  updateCarouselPosition(imagesPerView)
 
   // Restart auto-play after delay
   setTimeout(startCarouselAutoPlay, 2000)
@@ -308,9 +315,8 @@ function changeSlideAuto() {
   const imagesPerView = getImagesPerView()
   const maxSlides = Math.max(0, totalImages - imagesPerView)
 
-  currentSlide++
-
-  if (currentSlide > maxSlides) {
+  // If we're at the last slide, go back to the beginning
+  if (currentSlide >= maxSlides) {
     // Disable transition for seamless loop
     track.style.transition = "none"
     currentSlide = 0
@@ -321,6 +327,7 @@ function changeSlideAuto() {
       track.style.transition = "transform 0.5s ease"
     }, 50)
   } else {
+    currentSlide++
     updateCarouselPosition(imagesPerView)
   }
 }
@@ -362,7 +369,7 @@ function downloadProductList(type) {
     link.href = "/assets/pdf/domestic-product.pdf"
     link.download = "Trugen-Domestic-Product-List.pdf"
   } else {
-    link.href = "/assets/pdf/export.pdf"
+    link.href = "/assets/pdf/export-product.pdf"
     link.download = "Trugen-Export-Product-List.pdf"
   }
   link.style.display = "none"
