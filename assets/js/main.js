@@ -78,181 +78,59 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   }
 
-  initializeCarousel()
+  initializeFacilityModal()
   handleContactForm()
 })
 
-let currentSlide = 0
-let carouselInterval
-let totalImages = 0
-
-function initializeCarousel() {
-  const track = document.getElementById("carouselTrack")
-  if (!track) return
-
-  // Get total number of images
-  const images = track.querySelectorAll(".carousel-image")
-  totalImages = images.length
-  
-  console.log("Total images found:", totalImages)
-
-  // Initialize modal functionality
-  const modal = document.getElementById('carouselImageModal');
-  const modalImg = document.getElementById('carouselModalImage');
+function initializeFacilityModal() {
+  // Initialize modal functionality for facility images
+  const modal = document.getElementById('facilityImageModal');
+  const modalImg = document.getElementById('facilityModalImage');
   const closeBtn = modal?.querySelector('.close-modal');
 
-  // Function to open modal
-  function openModal(imgSrc, altText) {
-    if (modal && modalImg) {
-      modalImg.src = imgSrc;
-      modalImg.alt = altText;
-      modal.classList.add('show');
-      document.body.style.overflow = 'hidden';
-    }
-  }
+  if (!modal || !modalImg || !closeBtn) return;
 
-  // Function to close modal
-  function closeModal() {
-    if (modal && modalImg) {
-      modal.classList.remove('show');
-      document.body.style.overflow = '';
-      setTimeout(() => {
-        modalImg.src = '';
-      }, 300);
-    }
-  }
+  // Close modal when clicking the close button
+  closeBtn.addEventListener('click', closeFacilityModal);
 
-  // Add click event to carousel images
-  if (track) {
-    track.addEventListener('click', (e) => {
-      const img = e.target.closest('.carousel-image');
-      if (img) {
-        openModal(img.src, img.alt);
-      }
-    });
-  }
-
-  // Modal event listeners
-  if (closeBtn) {
-    closeBtn.addEventListener('click', closeModal);
-  }
-
-  if (modal) {
-    modal.addEventListener('click', (e) => {
-      if (e.target === modal) {
-        closeModal();
-      }
-    });
-  }
-
-  // Close modal with Escape key
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && modal?.classList.contains('show')) {
-      closeModal();
+  // Close modal when clicking outside the image
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      closeFacilityModal();
     }
   });
 
-  // Initialize carousel
-  updateCarouselDisplay()
-  startCarouselAutoPlay()
-
-  // Handle window resize
-  let resizeTimeout
-  window.addEventListener("resize", () => {
-    if (resizeTimeout) {
-      clearTimeout(resizeTimeout)
+  // Close modal with Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('show')) {
+      closeFacilityModal();
     }
-    resizeTimeout = setTimeout(() => {
-      // Reset to first slide on resize to avoid issues
-      currentSlide = 0
-      updateCarouselDisplay()
-    }, 150)
-  })
+  });
 }
 
-function updateCarouselDisplay() {
-  const track = document.getElementById("carouselTrack")
-  const prevBtn = document.querySelector('.prev-btn')
-  const nextBtn = document.querySelector('.next-btn')
+function openFacilityModal(imgSrc, altText) {
+  const modal = document.getElementById('facilityImageModal');
+  const modalImg = document.getElementById('facilityModalImage');
   
-  if (!track || totalImages === 0) return
-
-  const imagesPerView = getImagesPerView()
-  const maxSlide = Math.max(0, totalImages - imagesPerView)
+  if (!modal || !modalImg) return;
   
-  // Ensure currentSlide is within bounds
-  currentSlide = Math.max(0, Math.min(currentSlide, maxSlide))
-  
-  console.log("Current slide:", currentSlide, "Max slide:", maxSlide, "Images per view:", imagesPerView)
-
-  // Calculate transform
-  const slideWidth = 100 / imagesPerView
-  const translateX = currentSlide * slideWidth
-  track.style.transform = `translateX(-${translateX}%)`
-  
-  // Update navigation buttons
-  if (prevBtn && nextBtn) {
-    const isAtStart = currentSlide === 0
-    const isAtEnd = currentSlide >= maxSlide
-    
-    prevBtn.disabled = isAtStart
-    nextBtn.disabled = isAtEnd
-    
-    prevBtn.style.opacity = isAtStart ? "0.5" : "1"
-    nextBtn.style.opacity = isAtEnd ? "0.5" : "1"
-    
-    console.log("Navigation - At start:", isAtStart, "At end:", isAtEnd)
-  }
+  modalImg.src = imgSrc;
+  modalImg.alt = altText;
+  modal.classList.add('show');
+  document.body.style.overflow = 'hidden'; // Prevent scrolling
 }
 
-function changeSlide(direction) {
-  if (totalImages === 0) return
+function closeFacilityModal() {
+  const modal = document.getElementById('facilityImageModal');
+  const modalImg = document.getElementById('facilityModalImage');
   
-  const imagesPerView = getImagesPerView()
-  const maxSlide = Math.max(0, totalImages - imagesPerView)
+  if (!modal || !modalImg) return;
   
-  // Stop auto-play when user manually controls
-  stopCarouselAutoPlay()
-  
-  // Calculate new slide position
-  const newSlide = currentSlide + direction
-  
-  // Ensure we stay within bounds
-  if (newSlide >= 0 && newSlide <= maxSlide) {
-    currentSlide = newSlide
-    updateCarouselDisplay()
-  }
-  
-  console.log("Change slide direction:", direction, "New slide:", currentSlide)
-  
-  // Restart auto-play after delay
-  setTimeout(startCarouselAutoPlay, 3000)
-}
-
-function startCarouselAutoPlay() {
-  stopCarouselAutoPlay()
-  carouselInterval = setInterval(() => {
-    if (totalImages === 0) return
-    
-    const imagesPerView = getImagesPerView()
-    const maxSlide = Math.max(0, totalImages - imagesPerView)
-    
-    if (currentSlide >= maxSlide) {
-      // Reset to beginning for continuous loop
-      currentSlide = 0
-    } else {
-      currentSlide++
-    }
-    
-    updateCarouselDisplay()
-  }, 4000)
-}
-
-function stopCarouselAutoPlay() {
-  if (carouselInterval) {
-    clearInterval(carouselInterval)
-    carouselInterval = null
-  }
+  modal.classList.remove('show');
+  document.body.style.overflow = ''; // Restore scrolling
+  setTimeout(() => {
+    modalImg.src = ''; // Clear the source after animation
+  }, 300);
 }
 
 function redirectToProduct(productType) {
@@ -338,10 +216,4 @@ function handleContactForm() {
       contactForm.reset()
     })
   }
-}
-
-function getImagesPerView() {
-  if (window.innerWidth <= 480) return 1
-  if (window.innerWidth <= 768) return 2
-  return 4
 }
