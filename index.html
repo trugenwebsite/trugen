@@ -43,7 +43,6 @@
 
     <!-- Stylesheets -->
     <link rel="stylesheet" href="assets/css/style.css" />
-    <link rel="stylesheet" href="assets/css/pages/carousel.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -141,12 +140,12 @@
         </div>
       </section>
 
-      <!-- Moved carousel section below brochure -->
-      <section class="carousel-section">
+      <!-- Our Facilities section with 3 images -->
+      <section class="facilities-section">
         <div class="container">
-          <div class="carousel-header">
+          <div class="facilities-header">
             <h2 class="section-title">Our Facilities</h2>
-            <div class="carousel-controls">
+            <div class="facilities-controls">
               <a href="/pages/facilities/gallery.html" class="view-gallery-btn">
                 View Full Gallery
                 <i class="fas fa-images"></i>
@@ -154,179 +153,38 @@
             </div>
           </div>
 
-          <div class="carousel-container">
-            <button class="carousel-btn prev-btn" onclick="changeSlide(-1)">
-              &#8249;
-            </button>
-            <div class="carousel-wrapper">
-              <div class="carousel-track" id="carouselTrack">
-                <!-- Capsule -->
-                <img
-                  loading="lazy"
-                  src="/assets/images/capsule/7X2A2243.webp"
-                  alt="Capsule Facility"
-                  class="carousel-image"
-                  data-category="capsule"
-                  width="800"
-                  height="600"
-                />
-                <!-- Coating -->
-                <img
-                  src="/assets/images/coating/2.webp"
-                  alt="Coating Facility"
-                  class="carousel-image"
-                  data-category="coating"
-                />
-                 <img
-                  src="/assets/images/coating/7X2A2162.webp"
-                  alt="Coating Facility"
-                  class="carousel-image"
-                  data-category="coating"
-                />
-                <!-- Compression -->
-                <img
-                  src="/assets/images/compression/1.webp"
-                  alt="Compression Facility"
-                  class="carousel-image"
-                  data-category="compression"
-                /> 
-                <img
-                  src="/assets/images/compression/7X2A2141.webp"
-                  alt="Compression Facility"
-                  class="carousel-image"
-                  data-category="compression"
-                />
-                <!-- Granulation -->
-                <img
-                  src="/assets/images/granulation/7X2A2079.webp"
-                  alt="Granulation Facility"
-                  class="carousel-image"
-                  data-category="granulation"
-                />
-                <img
-                  src="/assets/images/granulation/7X2A2117.webp"
-                  alt="Granulation Facility"
-                  class="carousel-image"
-                  data-category="granulation"
-                />
-                <!-- Liquid -->
-                <img
-                  src="/assets/images/liquid/5.jpg"
-                  alt="Liquid Facility"
-                  class="carousel-image"
-                  data-category="liquid"
-                />
-                <img
-                  src="/assets/images/liquid/7X2A2300.webp"
-                  alt="Liquid Facility"
-                  class="carousel-image"
-                  data-category="liquid"
-                />
-                <img
-                  src="/assets/images/liquid/7X2A2308.webp"
-                  alt="Liquid Facility"
-                  class="carousel-image"
-                  data-category="liquid"
-                />
-                <!-- Office -->
-                <img
-                  src="/assets/images/office/4.webp"
-                  alt="Office"
-                  class="carousel-image"
-                  data-category="office"
-                />
-                 <img
-                  src="/assets/images/office/7X2A2466.webp"
-                  alt="Office"
-                  class="carousel-image"
-                  data-category="office"
-                />
-                 <img
-                  src="/assets/images/office/7X2A2481.webp"
-                  alt="Office"
-                  class="carousel-image"
-                  data-category="office"
-                />
-                <!-- Packing -->
-                <img
-                  src="/assets/images/packing/7X2A2184.webp"
-                  alt="Packing Facility"
-                  class="carousel-image"
-                  data-category="packing"
-                />
-                 <img
-                  src="/assets/images/packing/7X2A2212.webp"
-                  alt="Office"
-                  class="carousel-image"
-                  data-category="office"
-                />
-                <!-- Plant -->
-                <img
-                  src="/assets/images/plant/7X2A2284.webp"
-                  alt="Plant Facility"
-                  class="carousel-image"
-                  data-category="plant"
-                />
-                <img
-                  src="/assets/images/plant/Screenshot-223.webp"
-                  alt="Plant Facility"
-                  class="carousel-image"
-                  data-category="plant"
-                />
-                <!-- Quality Control Lab -->
-                <img
-                  src="/assets/images/quality-control/3.webp"
-                  alt="Quality Control Lab"
-                  class="carousel-image"
-                  data-category="quality-control"
-                />
-                <img
-                  src="/assets/images/quality-control/7X2A2406.webp"
-                  alt="Quality Control Lab"
-                  class="carousel-image"
-                  data-category="quality-control"
-                />
-                <!-- Research Department -->
-                <img
-                  src="/assets/images/r&d/7X2A2419.webp"
-                  alt="Research Department"
-                  class="carousel-image"
-                  data-category="research"
-                />
-                <img
-                  src="/assets/images/r&d/7X2A2431.webp"
-                  alt="Research Department"
-                  class="carousel-image"
-                  data-category="research"
-                />
-                <img
-                  src="/assets/images/r&d/7X2A2441.webp"
-                  alt="Research Department"
-                  class="carousel-image"
-                  data-category="research"
-                />
-                <!-- Stability Chambers -->
-                <img
-                  src="/assets/images/stability-chambers/7X2A2391.webp"
-                  alt="Stability Chambers"
-                  class="carousel-image"
-                  data-category="stability"
-                />
-              </div>
+          <div class="facilities-grid">
+            <div class="facility-item" onclick="openFacilityModal('/assets/images/home1.webp', 'Facility 1')">
+              <img
+                src="/assets/images/home1.webp"
+                alt="Facility 1"
+                class="facility-image"
+              />
             </div>
-            <button class="carousel-btn next-btn" onclick="changeSlide(1)">
-              &#8250;
-            </button>
+            <div class="facility-item" onclick="openFacilityModal('/assets/images/home2.webp', 'Facility 2')">
+              <img
+                src="/assets/images/home2.webp"
+                alt="Facility 2"
+                class="facility-image"
+              />
+            </div>
+            <div class="facility-item" onclick="openFacilityModal('/assets/images/home3.webp', 'Facility 3')">
+              <img
+                src="/assets/images/home3.webp"
+                alt="Facility 3"
+                class="facility-image"
+              />
+            </div>
           </div>
         </div>
       </section>
     </main>
 
-    <!-- Modal for carousel images -->
-    <div id="carouselImageModal" class="modal">
+    <!-- Modal for facility images -->
+    <div id="facilityImageModal" class="modal">
         <div class="modal-content">
             <span class="close-modal">&times;</span>
-            <img id="carouselModalImage" src="" alt="Facility Image">
+            <img id="facilityModalImage" src="" alt="Facility Image">
         </div>
     </div>
 
